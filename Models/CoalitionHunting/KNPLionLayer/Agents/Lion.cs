@@ -13,8 +13,7 @@ using SpatialAPI.Entities.Movement;
 using SpatialAPI.Entities.Transformation;
 using SpatialAPI.Environment;
 using SpatialAPI.Shape;
-using KNPLionLayer.Sensors;
-
+using KNPZebraLayer.Agents;
 namespace KNPLionLayer.Agents
 {
 	public class Lion :SpatialAgent, ILion
@@ -62,10 +61,12 @@ namespace KNPLionLayer.Agents
 		public IInteraction Reason() {
 
 			var mr = SensorArray.Get<MovementSensor, MovementResult>();
+
 			if (mr != null) {
 
 			}
-			IEnumerable<Elephant> ele = SensorArray.Get<ZebraSensor, IEnumerable<Elephant>>();
+
+			IEnumerable<Zebra> ele = SensorArray.Get<ZebraSensor, IEnumerable<Zebra>>();
 
 			//List<Coordinate> waterPoints = SensorArray.Get<WaterPointSensor, List<Coordinate>>();
 

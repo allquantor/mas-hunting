@@ -107,4 +107,10 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="KNPZebraLayer\KNPZebraLayer.csproj">
+      <Project>{9A8AB55B-7A29-4F0C-BEBF-59889B84AF94}</Project>
+      <Name>KNPZebraLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
