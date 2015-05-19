@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>WebSocket tests</title>
+    <script type="text/javascript">
+      function connect() {
+        var ws = new WebSocket("ws://echo.websocket.org");
+
+        ws.onopen = function() {
+          ws.send("My name is John Lennon.");
+        };
+
+        ws.onmessage = function(event) {
+          alert("Message received:\n" + event.data);
+        };
+
+        ws.onclose = function () {
+          alert("Connection was closed.");
+        };
+      }
+    </script>
+  </head>
+  <body>
+
+    <!--<img src="http://www.w3schools.com/js/objectExplained.gif" style="width:368px;height:230px;">-->   
+    <!--<input type="button" id="btn-01" value="Umschalten auf 2D"/>        
+    /*
+    // Enable 2D / 3D switch.
+    var button = document.getElementById("btn-01");
+    button.onclick = function() {
+    if (button.value == "Umschalten auf 2D") {
+    engine.is3D = false;
+    button.value = "Umschalten auf 3D";
+    } else {
+    engine.is3D = true;
+    button.value = "Umschalten auf 2D";
+    }
+    };
+    */
+    -->
+    <div id="sse">
+      <a href="javascript:connect()">Run WebSocket</a>
+    </div>
+  </body>
+</html>

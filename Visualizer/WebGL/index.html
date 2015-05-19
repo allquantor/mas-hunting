@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Example page for C# server test</title>
+  
+  <script type="text/javascript" src="res/glMatrix.js"></script>
+  <script type="text/javascript" src="js/ShaderDefinitions.js"></script>
+  <script type="text/javascript" src="js/Object3D.js"></script>
+  <script type="text/javascript" src="js/World.js"></script>
+  <script type="text/javascript" src="js/Camera.js"></script>
+  <script type="text/javascript" src="js/Controller.js"></script>
+  <script type="text/javascript" src="js/GuiController.js"></script>
+  <script type="text/javascript" src="js/CameraController.js"></script>
+  <script type="text/javascript" src="js/WebGLEngine.js"></script>
+  <script type="text/javascript" src="js/script1.js"></script>
+  
+  <style type="text/css">
+    body {
+      background-color: #eeeeee;
+    }
+    #webgl-canvas {
+      background-color: white;
+      border: 1px solid black;
+      margin-right: 25px;
+      float: left;
+    }
+
+    #link_hideSettings, #link_showSettings {
+      color: blue;
+      font-size: small;
+      font-weight: normal;
+      text-decoration: none;      
+    }
+    #link_hideSettings:hover, #link_showSettings:hover {
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+
+<body onload="WebGLStart();">
+  <canvas id="webgl-canvas" width="800" height="600"></canvas>
+  <div>
+    
+    <h3>Überblick:</h3>
+    <table>
+      <tr><td>Position:</td><td id="position"></td></tr>
+      <tr><td>Drehung:</td><td id="yaw"></td></tr>
+      <tr><td>Blickwinkel:</td><td id="pitch"></td></tr>
+      <tr><td>Mauszeiger:</td><td id="mouse"></td></tr>
+      <tr><td>FPS:</td><td id="fps"></td></tr>
+    </table>
+    <a id="link_showSettings" href="#">[Einstellungen anzeigen]</a>
+    
+    
+    <div id="settings" style="display: none;">
+      <h3>Einstellungen: &nbsp; <a id="link_hideSettings" href="#">[verbergen]</a></h3>
+      <table>
+        <tr>
+          <td>Kameraposition:</td>
+          <td><input type="text" id="input_position" name="input_position" size="17" /></td>
+        </tr>
+        <tr>
+          <td>Geschwindigkeit:</td>
+          <td><input type="text" id="input_speed" name="input_speed" size="17" /></td>
+        </tr>
+        <tr>
+          <td>Engine-FPS:</td>
+          <td><input type="text" id="input_fps" name="input_fps" size="17" /></td>
+        </tr>
+        <tr>
+          <td>2D-Achsensperre:</td>
+          <td><input type="checkbox" id="input_lockAxes" /></td>
+        </tr>
+        <tr>
+          <td>Verbindungstyp:</td>
+          <td>
+            <select id="input_connectionType">
+              <option>XHR Long Polling</option>
+              <option>WebSockets</option>
+              <option>Testmodus / offline</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Verbindung halten:</td>
+          <td><input type="checkbox" id="input_holdConnection" /></td>
+        </tr>
+      </table>
+    </div>
+    
+
+    <h3>Serverantwort:</h3>
+    <div id="output"></div>  
+
+  </div>
+</body>
+</html>
