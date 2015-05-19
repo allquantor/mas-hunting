@@ -9,7 +9,7 @@ using SpatialAPI.Entities.Movement;
 using SpatialAPI.Entities.Transformation;
 using SpatialAPI.Environment;
 using SpatialAPI.Shape;
-using Visualizer;
+// using Visualizer;
 
 [assembly: Addin]
 [assembly: AddinDependency("LayerContainer", "0.1")]
@@ -20,12 +20,12 @@ namespace KNPEnvironmentLayer
     {
         private IEnvironment _esc;
         private long _currentTick;
-        private SimpleVisualizer _visualizer; // WebGL <=> IEnvironment visualization class.
+        //private SimpleVisualizer _visualizer; // WebGL <=> IEnvironment visualization class.
 
 
         public bool InitLayer(TInitData layerInitData, RegisterAgent registerAgentHandle, UnregisterAgent unregisterAgentHandle) {
             _esc = new EnvironmentServiceComponent.Implementation.EnvironmentServiceComponent();
-            _visualizer = new SimpleVisualizer(_esc);
+           // _visualizer = new SimpleVisualizer(_esc);
             System.Diagnostics.Process.Start("http://localhost:1338");
             return true;
         }
@@ -87,7 +87,7 @@ namespace KNPEnvironmentLayer
 
       public void PostTick() {
           Console.Write("Tick "+_currentTick+" finished, transmitting vis data: ");
-          _visualizer.TransmitVisualizationData();        
+          //_visualizer.TransmitVisualizationData();        
       }
     }
 }
