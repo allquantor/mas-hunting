@@ -29,9 +29,56 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="AppSettingsManager">
+      <HintPath>..\..\..\..\packages\DalskiAgent.0.4.30\lib\net45\AppSettingsManager.dll</HintPath>
+    </Reference>
+    <Reference Include="ASC">
+      <HintPath>..\..\..\..\packages\DalskiAgent.0.4.30\lib\net45\ASC.dll</HintPath>
+    </Reference>
+    <Reference Include="CustomUtilities">
+      <HintPath>..\..\..\..\packages\DalskiAgent.0.4.30\lib\net45\CustomUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="DalskiAgent">
+      <HintPath>..\..\..\..\packages\DalskiAgent.0.4.30\lib\net45\DalskiAgent.dll</HintPath>
+    </Reference>
+    <Reference Include="GeoAPI">
+      <HintPath>..\..\..\..\packages\DalskiAgent.0.4.30\lib\net45\GeoAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="LCConnector">
+      <HintPath>..\..\..\..\packages\DalskiAgent.0.4.30\lib\net45\LCConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="LifeAPI">
+      <HintPath>..\..\..\..\packages\DalskiAgent.0.4.30\lib\net45\LifeAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="LIFEViewProtocol">
+      <HintPath>..\..\..\..\packages\DalskiAgent.0.4.30\lib\net45\LIFEViewProtocol.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\..\packages\DalskiAgent.0.4.30\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Addins">
+      <HintPath>..\..\..\..\packages\DalskiAgent.0.4.30\lib\net45\Mono.Addins.dll</HintPath>
+    </Reference>
+    <Reference Include="MulticastAdapter">
+      <HintPath>..\..\..\..\packages\DalskiAgent.0.4.30\lib\net45\MulticastAdapter.dll</HintPath>
+    </Reference>
+    <Reference Include="NetTopologySuite">
+      <HintPath>..\..\..\..\packages\DalskiAgent.0.4.30\lib\net45\NetTopologySuite.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerCollections">
+      <HintPath>..\..\..\..\packages\DalskiAgent.0.4.30\lib\net45\PowerCollections.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>..\..\..\..\packages\DalskiAgent.0.4.30\lib\net45\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="Scs">
+      <HintPath>..\..\..\..\packages\DalskiAgent.0.4.30\lib\net45\Scs.dll</HintPath>
+    </Reference>
+    <Reference Include="SpatialAPI">
+      <HintPath>..\..\..\..\packages\DalskiAgent.0.4.30\lib\net45\SpatialAPI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Agents\IZebra.cs" />
     <Compile Include="Agents\Zebra.cs" />
@@ -40,5 +87,8 @@
   <ItemGroup>
     <Folder Include="Agents\" />
     <Folder Include="Sensors\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
