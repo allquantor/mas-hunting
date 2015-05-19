@@ -9,7 +9,7 @@ using SpatialAPI.Environment;
 
 namespace KNPLionLayer.Sensors
 {
-	class ZebraSensor : ISensor
+	internal class ZebraSensor : ISensor
 	{
 		private readonly IEnvironment environment;
 		public ZebraSensor(IEnvironment env)
@@ -17,7 +17,7 @@ namespace KNPLionLayer.Sensors
 			environment = env;
 		}
 
-		object Sense()
+		public object Sense()
 		{
 			IEnumerable<Zebra> elephants =  environment.ExploreAll().OfType<Zebra>();
 			return elephants;

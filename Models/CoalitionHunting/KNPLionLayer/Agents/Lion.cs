@@ -13,7 +13,7 @@ using SpatialAPI.Entities.Movement;
 using SpatialAPI.Entities.Transformation;
 using SpatialAPI.Environment;
 using SpatialAPI.Shape;
-using KNPZebraLayer.Agents;
+using KNPZebraLayer;
 namespace KNPLionLayer.Agents
 {
 	public class Lion :SpatialAgent, ILion
