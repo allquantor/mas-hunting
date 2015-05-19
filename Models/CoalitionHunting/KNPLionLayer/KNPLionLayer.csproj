@@ -78,19 +78,19 @@
       <HintPath>..\..\..\packages\DalskiAgent.0.4.30\lib\net45\SpatialAPI.dll</HintPath>
     </Reference>
     <Reference Include="LayerLoggingService">
-      <HintPath>..\..\..\packages\LayerLoggingService.0.1.13\lib\net45\LayerLoggingService.dll</HintPath>
+      <HintPath>..\..\..\packages\LayerLoggingService.0.1.14\lib\net45\LayerLoggingService.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Bson">
-      <HintPath>..\..\..\packages\LayerLoggingService.0.1.13\lib\net45\MongoDB.Bson.dll</HintPath>
+      <HintPath>..\..\..\packages\LayerLoggingService.0.1.14\lib\net45\MongoDB.Bson.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Driver.Core">
-      <HintPath>..\..\..\packages\LayerLoggingService.0.1.13\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+      <HintPath>..\..\..\packages\LayerLoggingService.0.1.14\lib\net45\MongoDB.Driver.Core.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Driver">
-      <HintPath>..\..\..\packages\LayerLoggingService.0.1.13\lib\net45\MongoDB.Driver.dll</HintPath>
+      <HintPath>..\..\..\packages\LayerLoggingService.0.1.14\lib\net45\MongoDB.Driver.dll</HintPath>
     </Reference>
     <Reference Include="RabbitMQ.Client">
-      <HintPath>..\..\..\packages\LayerLoggingService.0.1.13\lib\net45\RabbitMQ.Client.dll</HintPath>
+      <HintPath>..\..\..\packages\RabbitMQ.Client.3.5.2\lib\net40\RabbitMQ.Client.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -98,9 +98,6 @@
     <Compile Include="Agents\ILion.cs" />
     <Compile Include="Agents\Lion.cs" />
     <Compile Include="Sensors\ZebraSensor.cs" />
-    <Compile Include="Agents\IZebra.cs" />
-    <Compile Include="Agents\Zebra.cs" />
-    <Compile Include="Agents\Zebra#.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
