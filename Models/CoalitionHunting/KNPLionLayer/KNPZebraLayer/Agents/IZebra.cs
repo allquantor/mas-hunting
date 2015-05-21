@@ -1,9 +1,14 @@
-﻿using System;
+﻿using DalskiAgent.Agents;
+using DalskiAgent.Reasoning;
+using SpatialAPI.Entities.Transformation;
 
-namespace KNPLionLayer
+namespace KNPZebraLayer
 {
-	public interface IZebra
+	public interface IZebra  : ISpatialAgent, IAgentLogic
 	{
+		Vector3 getPosition ();
+		Direction GetDirection();
+		int getStatus();
 	}
 }
 

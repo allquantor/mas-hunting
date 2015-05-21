@@ -67,7 +67,11 @@ namespace KNPLionLayer.Agents
 
 			}
 
-			IEnumerable<Zebra> ele = SensorArray.Get<ZebraSensor, IEnumerable<Zebra>>();
+			IEnumerable<Zebra> zebras = SensorArray.Get<ZebraSensor, IEnumerable<Zebra>>();
+
+			foreach (Zebra z in zebras) {
+				
+			}
 
 			//List<Coordinate> waterPoints = SensorArray.Get<WaterPointSensor, List<Coordinate>>();
 

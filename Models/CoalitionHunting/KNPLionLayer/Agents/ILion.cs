@@ -11,6 +11,8 @@ namespace KNPLionLayer.Agents
 
 		Vector3 GetPosition();
 		Direction GetDirection();
+		int GetRole();
+
 	}
 
 }
