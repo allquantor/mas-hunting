@@ -27,6 +27,7 @@ namespace KNPLionLayer.Agents
 		private  bool leading;
 		private Lion prideLeader;
 		private string state;
+        private Zebra hunted_zebra;
 		private Direction preyDirection;
 		private double searchSpeed;
 		private double preySpeed;
@@ -67,11 +68,40 @@ namespace KNPLionLayer.Agents
 
 			}
 
-			IEnumerable<Zebra> zebras = SensorArray.Get<ZebraSensor, IEnumerable<Zebra>>();
+            if (state == "searching")
+            {
 
-			foreach (Zebra z in zebras) {
-				
-			}
+                IEnumerable<Zebra> zebras = SensorArray.Get<ZebraSensor, IEnumerable<Zebra>>();
+                Zebra closest;
+                double distance ;
+                double nearest_distance = double.MaxValue;
+                foreach (Zebra z in zebras)
+                {
+                    Zebra ze = (Zebra)z;
+                    distance = GetPosition().GetDistance( ze.GetDistance());
+                    if (distance < nearest_distance)
+                    {
+                        closest = ze;
+                        nearest_distance = distance;
+
+                    }
+                }
+                hunted_zebra = closest;
+                state = "stalking";
+                
+                }
+
+            if (state == "stalking")
+            {
+                double distance = GetPosition().GetDistance(hunted_zebra.GetDistance());
+                if(distance > 40.0){
+                Mover.Continuous.Move(10, hunted_zebra.GetDirection());
+                }
+                else {
+                    state = "hunting";
+                }
+
+            }
 
 			//List<Coordinate> waterPoints = SensorArray.Get<WaterPointSensor, List<Coordinate>>();
 
