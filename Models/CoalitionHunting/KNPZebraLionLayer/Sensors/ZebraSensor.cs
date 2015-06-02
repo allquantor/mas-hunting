@@ -8,7 +8,7 @@ using SpatialAPI.Environment;
 using KNPZebraLayer;
 
 
-namespace KNPLionLayer.Sensors
+namespace KNPZebraLion
 {
 	internal class ZebraSensor : ISensor
 	{

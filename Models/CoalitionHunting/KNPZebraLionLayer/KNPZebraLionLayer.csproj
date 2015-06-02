@@ -130,8 +130,20 @@
     <Reference Include="Scs">
       <HintPath>..\..\..\packages\DalskiAgent.0.4.34\lib\net45\Scs.dll</HintPath>
     </Reference>
+    <Reference Include="BHVTree">
+      <HintPath>..\..\..\packages\EnvironmentServiceComponent.0.4.31\lib\net45\BHVTree.dll</HintPath>
+    </Reference>
+    <Reference Include="EnvironmentServiceComponent">
+      <HintPath>..\..\..\packages\EnvironmentServiceComponent.0.4.31\lib\net45\EnvironmentServiceComponent.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK">
+      <HintPath>..\..\..\packages\EnvironmentServiceComponent.0.4.31\lib\net45\OpenTK.dll</HintPath>
+    </Reference>
     <Reference Include="SpatialAPI">
-      <HintPath>..\..\..\packages\DalskiAgent.0.4.34\lib\net45\SpatialAPI.dll</HintPath>
+      <HintPath>..\..\..\packages\EnvironmentServiceComponent.0.4.31\lib\net45\SpatialAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="SpatialObjectOctree">
+      <HintPath>..\..\..\packages\EnvironmentServiceComponent.0.4.31\lib\net45\SpatialObjectOctree.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +154,8 @@
     <Compile Include="Agents\Lion.cs" />
     <Compile Include="Sensors\ZebraSensor.cs" />
     <Compile Include="Sensors\LionSensor.cs" />
+    <Compile Include="IKNPZebraLionLayer.cs" />
+    <Compile Include="KNPZebraLion.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup />
@@ -155,4 +169,14 @@
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
+  <ItemGroup>
+    <ProjectReference Include="..\KNPElevationLayer\KNPElevationLayer.csproj">
+      <Project>{5EFF1E02-D502-45C1-B6CD-9B9E99C835A6}</Project>
+      <Name>KNPElevationLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KNPEnvironmentLayer\KNPEnvironmentLayer.csproj">
+      <Project>{9CCBADF0-E720-4088-AAB0-7F904E7966FB}</Project>
+      <Name>KNPEnvironmentLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

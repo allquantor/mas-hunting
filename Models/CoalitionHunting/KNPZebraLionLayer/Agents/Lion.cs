@@ -14,8 +14,8 @@ using SpatialAPI.Entities.Transformation;
 using SpatialAPI.Environment;
 using SpatialAPI.Shape;
 using KNPZebraLayer;
-using KNPLionLayer.Sensors;
-namespace KNPLionLayer.Agents
+
+namespace KNPZebraLion
 {
 	public class Lion :SpatialAgent, ILion
 
@@ -68,7 +68,7 @@ namespace KNPLionLayer.Agents
 
 		private IInteraction searching() {
 
-			IEnumerable<Zebra> zebras = SensorArray.Get<ZebraSensor, IEnumerable<Zebra>>();
+			var zebras = SensorArray.Get<ZebraSensor, IEnumerable<Zebra>>();
 			if (zebras.Count > 0) {
 				Zebra closest;
 				double distance;
@@ -132,58 +132,6 @@ namespace KNPLionLayer.Agents
 				returnInteraction = hunting();
 				break;
 			}
-
-            if (state == "searching")
-            {
-
-               
-					
-                if (strategy == "none")
-                {
-                    hunted_zebra = closest;
-                    state = "stalking";
-                }
-                
-                
-                }
-
-            if (state == "stalking")
-            {
-                if (strategy == "none") { 
-                    double distance = GetPosition().GetDistance(hunted_zebra.GetPosition());
-                    if(distance > 40.0){
-                    // Position des Zebras heraus finden.
-                        //Mover.Continuous.Move(10, Mover.CalculateDirectionToTarget(hunted_zebra.GetPosition().));
-                    }
-                    else {
-                        state = "hunting";
-                    }
-                    //if (strategy == "u-formation")
-                    //{                        // Links und Rechts Bestimmen und in Position gehen.                    }
-
-                   // if (strategy == "einkreisen")
-                    //{                    }
-                }
-            }
-            if (state == "hunting")
-            {
-   
-                
-               Mover.Continuous.Move(10, Mover.CalculateDirectionToTarget(hunted_zebra.GetPosition()));
-
-            }
-
-			//List<Coordinate> waterPoints = SensorArray.Get<WaterPointSensor, List<Coordinate>>();
-
-			//if (leading)
-			//{
-				// todo: find target
-				//return Mover.Continuous.Move(10,0,50);
-			//}
-			//else
-			//{
-			//	return Mover.Continuous.Move(10, prideLeader.GetDirection());
-			//}
 		}
 
 		public JsonProperty[] ToJson() {

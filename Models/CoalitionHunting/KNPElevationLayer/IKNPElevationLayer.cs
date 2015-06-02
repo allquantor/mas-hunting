@@ -4,7 +4,7 @@ using LifeAPI.Layer.GIS;
 namespace KNPElevationLayer
 {
     [ScsService(Version = "0.1")]
-    public interface IKNPElevationLayer : IGISActiveLayer
+    public interface IKnpElevationLayer : IGISActiveLayer
     {
         string Name { get; }
     }
