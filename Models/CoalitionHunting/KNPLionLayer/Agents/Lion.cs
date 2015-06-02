@@ -86,26 +86,46 @@ namespace KNPLionLayer.Agents
 
                     }
                 }
-                hunted_zebra = closest;
-                state = "stalking";
+                if (strategy == "none")
+                {
+                    hunted_zebra = closest;
+                    state = "stalking";
+                }
+                else
+                {
+                    // Sense Lions    
+                }
                 
                 }
 
             if (state == "stalking")
             {
-                double distance = GetPosition().GetDistance(hunted_zebra.GetDistance());
-                if(distance > 40.0){
-                Mover.Continuous.Move(10, Mover.CalculateDirectionToTarget(hunted_zebra));
-                }
-                else {
-                    state = "hunting";
-                }
+                if (strategy == "none") { 
+                    double distance = GetPosition().GetDistance(hunted_zebra.GetDistance());
+                    if(distance > 40.0){
+                    // Position des Zebras heraus finden.
+                        //Mover.Continuous.Move(10, Mover.CalculateDirectionToTarget(hunted_zebra.GetPosition().));
+                    }
+                    else {
+                        state = "hunting";
+                    }
+                    if (strategy == "u-formation")
+                    {
+                        // Links und Rechts Bestimmen und in Position gehen.
 
+                    }
+
+                    if (strategy == "einkreisen")
+                    {
+
+                    }
+                }
             }
             if (state == "hunting")
             {
-                hunted_zebra.StartHunt(GetDirection());
                 
+                hunted_zebra.StartHunt(GetDirection());
+                //Mover.Continuous.Move(10, Mover.CalculateDirectionToTarget(hunted_zebra.GetPosition().));
 
             }
 
@@ -125,7 +145,7 @@ namespace KNPLionLayer.Agents
 		public JsonProperty[] ToJson() {
 			return null;
 		}
-
+        
 		public Vector3 GetPosition() {
 			return SpatialData.Position;
 		}
