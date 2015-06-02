@@ -8,7 +8,7 @@ using Hik.Communication.ScsServices.Service;
 using KNPElevationLayer;
 using KNPEnvironmentLayer;
 using LayerLoggingService;
-using KNPZebraLayer;
+using KNPZebraLionLayer;
 using LCConnector.TransportTypes;
 using LifeAPI.Layer;
 using Mono.Addins;
@@ -65,7 +65,7 @@ namespace KNPZebraLionLayer {
 
 			// Create file logger.
 			var timeStamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss-fff");
-			_csvLogger = new LayerLogger(csvDirectoryPath: "./", csvFileName: "output" + timeStamp + ".csv", csvDelimiter: ";");
+			_csvLogger = new LayerLoggerCsv(csvDirectoryPath: "./", csvFileName: "output" + timeStamp + ".csv", csvDelimiter: ";");
 
 
 			//var agentInitConfig = layerInitData.AgentInitConfigs.First();

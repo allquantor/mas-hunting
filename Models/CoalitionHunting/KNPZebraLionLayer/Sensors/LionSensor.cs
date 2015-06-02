@@ -2,7 +2,7 @@
 using DalskiAgent.Perception;
 using SpatialAPI.Environment;
 
-namespace KNPZebraLayer
+namespace KNPZebraLionLayer
 {
 	public class LionSensor :ISensor
 	{

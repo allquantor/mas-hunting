@@ -13,7 +13,7 @@ using SpatialAPI.Entities.Movement;
 using SpatialAPI.Entities.Transformation;
 using SpatialAPI.Environment;
 using SpatialAPI.Shape;
-using KNPZebraLayer;
+using KNPZebraLionLayer;
 
 namespace KNPZebraLionLayer
 {

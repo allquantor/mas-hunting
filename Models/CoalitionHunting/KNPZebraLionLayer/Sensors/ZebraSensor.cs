@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using DalskiAgent.Perception;
 using SpatialAPI.Environment;
-using KNPZebraLayer;
+using KNPZebraLionLayer;
 
 
-namespace KNPZebraLion
+namespace KNPZebraLionLayer
 {
 	internal class ZebraSensor : ISensor
 	{
