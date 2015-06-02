@@ -69,7 +69,7 @@ namespace KNPZebraLion
 		private IInteraction searching() {
 
 			var zebras = SensorArray.Get<ZebraSensor, IEnumerable<Zebra>>();
-			if (zebras.Count > 0) {
+			if (zebras.Count() > 0) {
 				Zebra closest;
 				double distance;
 				double nearest_distance = double.MaxValue;
@@ -98,7 +98,7 @@ namespace KNPZebraLion
 			return Mover.Continuous.Move (maxSPeed, Mover.CalculateDirectionToTarget (hunted_zebra.GetPosition ()));
 		}
 
-		private IInteraction stalinkg() {
+		private IInteraction stalking() {
 			if(this.GetPosition().GetDistance(hunted_zebra.GetPosition()) <= criticalDistance)  {
 				state = "hunting";
 				return hunting();
@@ -126,7 +126,7 @@ namespace KNPZebraLion
 				returnInteraction = searching ();
 				break;
 			case "stalking":
-				returnInteraction = stalinkg();
+				returnInteraction = stalking();
 				break;
 			case "hunting":
 				returnInteraction = hunting();
