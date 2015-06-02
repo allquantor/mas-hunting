@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
+# Visual Studio 2012
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MARSLocalStarter", "MARSLocalStarter\MARSLocalStarter.csproj", "{9F7FBE17-2E7D-4F79-947E-3DA2F0A41296}"
@@ -11,13 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Skukuza", "Skukuza", "{C990
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CoalitionHunting", "CoalitionHunting", "{3F22B802-3279-4EFD-B202-41515FD116CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KNPLionLayer", "Models\CoalitionHunting\KNPLionLayer\KNPLionLayer.csproj", "{A5554C0E-1806-48F2-B9C8-EF24781FC214}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KNPZebraLayer", "Models\CoalitionHunting\KNPLionLayer\KNPZebraLayer\KNPZebraLayer.csproj", "{9A8AB55B-7A29-4F0C-BEBF-59889B84AF94}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KNPElevationLayer", "Models\CoalitionHunting\KNPElevationLayer\KNPElevationLayer.csproj", "{5EFF1E02-D502-45C1-B6CD-9B9E99C835A6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KNPEnvironmentLayer", "Models\CoalitionHunting\KNPEnvironmentLayer\KNPEnvironmentLayer.csproj", "{9CCBADF0-E720-4088-AAB0-7F904E7966FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KNPZebraLionLayer", "Models\CoalitionHunting\KNPZebraLionLayer\KNPZebraLionLayer.csproj", "{54E73349-6ABB-4EC3-B9BD-EE12E9313974}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D41BE5B3-0AF5-4018-921E-5FAEC284F545}"
 EndProject
@@ -27,14 +25,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54E73349-6ABB-4EC3-B9BD-EE12E9313974}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54E73349-6ABB-4EC3-B9BD-EE12E9313974}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54E73349-6ABB-4EC3-B9BD-EE12E9313974}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54E73349-6ABB-4EC3-B9BD-EE12E9313974}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5EFF1E02-D502-45C1-B6CD-9B9E99C835A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5EFF1E02-D502-45C1-B6CD-9B9E99C835A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EFF1E02-D502-45C1-B6CD-9B9E99C835A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EFF1E02-D502-45C1-B6CD-9B9E99C835A6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9A8AB55B-7A29-4F0C-BEBF-59889B84AF94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9A8AB55B-7A29-4F0C-BEBF-59889B84AF94}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9A8AB55B-7A29-4F0C-BEBF-59889B84AF94}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9A8AB55B-7A29-4F0C-BEBF-59889B84AF94}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9CCBADF0-E720-4088-AAB0-7F904E7966FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9CCBADF0-E720-4088-AAB0-7F904E7966FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CCBADF0-E720-4088-AAB0-7F904E7966FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -43,28 +41,15 @@ Global
 		{9F7FBE17-2E7D-4F79-947E-3DA2F0A41296}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F7FBE17-2E7D-4F79-947E-3DA2F0A41296}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F7FBE17-2E7D-4F79-947E-3DA2F0A41296}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A5554C0E-1806-48F2-B9C8-EF24781FC214}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A5554C0E-1806-48F2-B9C8-EF24781FC214}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A5554C0E-1806-48F2-B9C8-EF24781FC214}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A5554C0E-1806-48F2-B9C8-EF24781FC214}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9A8AB55B-7A29-4F0C-BEBF-59889B84AF94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9A8AB55B-7A29-4F0C-BEBF-59889B84AF94}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9A8AB55B-7A29-4F0C-BEBF-59889B84AF94}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9A8AB55B-7A29-4F0C-BEBF-59889B84AF94}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5EFF1E02-D502-45C1-B6CD-9B9E99C835A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5EFF1E02-D502-45C1-B6CD-9B9E99C835A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5EFF1E02-D502-45C1-B6CD-9B9E99C835A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5EFF1E02-D502-45C1-B6CD-9B9E99C835A6}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C99052F4-D70F-45F9-92C7-9777FF4DEF64} = {C24852C9-CF9E-4B71-B817-A48B01B943B4}
 		{3F22B802-3279-4EFD-B202-41515FD116CE} = {C24852C9-CF9E-4B71-B817-A48B01B943B4}
-		{A5554C0E-1806-48F2-B9C8-EF24781FC214} = {3F22B802-3279-4EFD-B202-41515FD116CE}
-		{9A8AB55B-7A29-4F0C-BEBF-59889B84AF94} = {3F22B802-3279-4EFD-B202-41515FD116CE}
 		{5EFF1E02-D502-45C1-B6CD-9B9E99C835A6} = {3F22B802-3279-4EFD-B202-41515FD116CE}
 		{9CCBADF0-E720-4088-AAB0-7F904E7966FB} = {3F22B802-3279-4EFD-B202-41515FD116CE}
+		{54E73349-6ABB-4EC3-B9BD-EE12E9313974} = {3F22B802-3279-4EFD-B202-41515FD116CE}
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
