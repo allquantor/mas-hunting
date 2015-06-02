@@ -8,7 +8,7 @@ namespace KNPZebraLionLayer
 	{
 		Vector3 GetPosition ();
 		Direction GetDirection();
-		int GetStatus();
+		int GetState();
 	}
 }
 
