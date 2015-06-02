@@ -6,6 +6,8 @@ using SpatialAPI.Shape;
 using SpatialAPI.Entities.Transformation;
 using SpatialAPI.Entities.Movement;
 using KNPElevationLayer;
+using System.Collections.Generic;
+using DalskiAgent.Interactions;
 
 namespace KNPZebraLionLayer
 {
@@ -24,6 +26,7 @@ namespace KNPZebraLionLayer
 		private double maxSPeed;
 		private string strategy;
 
+		private Double zebraViewFactor;
 
 
 
@@ -38,13 +41,16 @@ namespace KNPZebraLionLayer
 			double lat,
 			double lon,
 			double imageCoordX,
-			double imageCoordY)
+			double imageCoordY,
+            double maxSpeed,
+			double zebraViewFactor)
 			:
 		base(layer, registerAgent, unregisterAgent, environment, id, shape, collisionType:CollisionType.Ghost) {
 			_lat = lat;
 			_lon = lon;
 			_imageCoordX = imageCoordX;
 			_imageCoordY = imageCoordY;
+            maxSpeed = 20;
 			state = "chill";
 
 			SensorArray.AddSensor(new LionSensor(environment));
@@ -62,18 +68,58 @@ namespace KNPZebraLionLayer
 		}
 
 
-		public int GetStatus ()    
+		public String GetState ()    
 		{
-			return 1;
+			return state;
 		}
 
 		#endregion
 
 		#region IAgentLogic implementation
 
+        private IInteraction LookOut()
+		{
+            IInteraction movement = Mover.Continuous.Move(0, 0, 0);
+			var lions = SensorArray.Get<LionSensor, List<Lion>>();
+			Lion closestLion = null;
+
+
+			if (lions.Count > 0) {
+				double distance;
+				double nearest_distance = double.MaxValue;
+
+				foreach (Lion li in lions) {
+					Lion l = (Lion)li;
+					distance = GetPosition().GetDistance (l.GetPosition ());
+					if (distance < nearest_distance) {
+						closestLion = l;
+						nearest_distance = distance;
+					}
+				}
+
+				if (this.GetPosition ().GetDistance (closestLion.GetPosition ()) <= zebraViewFactor) {
+					state = "flucht";
+                    movement= Mover.Continuous.Move(maxSPeed, closestLion.GetDirection());
+				
+                }
+			}
+            return movement;
+		}
+
 		public DalskiAgent.Interactions.IInteraction Reason ()
 		{
-			throw new NotImplementedException ();
+            IInteraction movement = Mover.Continuous.Move(0, 0, 0);
+			switch (state) {
+
+			case "chill":
+                    movement = LookOut();
+                    break;
+                    
+			case "flucht":
+                   movement=  Mover.Continuous.Move(maxSPeed, GetDirection());
+                   break;
+			}
+            return movement;
 		}
 
 		#endregion
