@@ -50,14 +50,14 @@ namespace KNPZebraLayer
 
 		#region IZebra implementation
 
-		public Vector3 getPosition ()
-		{
-			throw new NotImplementedException ();
+		
+		public Vector3 GetPosition() {
+			return SpatialData.Position;
 		}
 
-		public Direction GetDirection ()
-		{
-			throw new NotImplementedException ();
+		public Direction GetDirection() {
+			return SpatialData.Direction;
+		}
 		}
 
 		public int getStatus ()
