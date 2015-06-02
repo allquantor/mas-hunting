@@ -64,6 +64,8 @@ namespace KNPLionLayer.Agents
 
 			var mr = SensorArray.Get<MovementSensor, MovementResult>();
 
+            IInteraction returnInteraction ;
+
 			if (mr != null) {
 
 			}
@@ -78,7 +80,7 @@ namespace KNPLionLayer.Agents
                 foreach (Zebra z in zebras)
                 {
                     Zebra ze = (Zebra)z;
-                    distance = GetPosition().GetDistance( ze.GetDistance());
+                    distance = GetPosition().GetDistance( ze.GetPosition());
                     if (distance < nearest_distance)
                     {
                         closest = ze;
@@ -91,17 +93,14 @@ namespace KNPLionLayer.Agents
                     hunted_zebra = closest;
                     state = "stalking";
                 }
-                else
-                {
-                    // Sense Lions    
-                }
+                
                 
                 }
 
             if (state == "stalking")
             {
                 if (strategy == "none") { 
-                    double distance = GetPosition().GetDistance(hunted_zebra.GetDistance());
+                    double distance = GetPosition().GetDistance(hunted_zebra.GetPosition());
                     if(distance > 40.0){
                     // Position des Zebras heraus finden.
                         //Mover.Continuous.Move(10, Mover.CalculateDirectionToTarget(hunted_zebra.GetPosition().));
@@ -109,23 +108,18 @@ namespace KNPLionLayer.Agents
                     else {
                         state = "hunting";
                     }
-                    if (strategy == "u-formation")
-                    {
-                        // Links und Rechts Bestimmen und in Position gehen.
+                    //if (strategy == "u-formation")
+                    //{                        // Links und Rechts Bestimmen und in Position gehen.                    }
 
-                    }
-
-                    if (strategy == "einkreisen")
-                    {
-
-                    }
+                   // if (strategy == "einkreisen")
+                    //{                    }
                 }
             }
             if (state == "hunting")
             {
+   
                 
-                hunted_zebra.StartHunt(GetDirection());
-                //Mover.Continuous.Move(10, Mover.CalculateDirectionToTarget(hunted_zebra.GetPosition().));
+               Mover.Continuous.Move(10, Mover.CalculateDirectionToTarget(hunted_zebra.GetPosition()));
 
             }
 
@@ -161,5 +155,12 @@ namespace KNPLionLayer.Agents
 			preyDirection = zebraDirection;
 		}
 
-	}
+
+
+        int ILion.GetRole()
+        {
+            throw new NotImplementedException();
+        }
+
+    }
 }
