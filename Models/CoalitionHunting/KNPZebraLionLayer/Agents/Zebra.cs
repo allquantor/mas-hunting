@@ -6,6 +6,7 @@ using SpatialAPI.Shape;
 using SpatialAPI.Entities.Transformation;
 using SpatialAPI.Entities.Movement;
 using System.Collections.Generic;
+using DalskiAgent.Interactions;
 
 namespace KNPZebraLionLayer
 {
@@ -39,6 +40,7 @@ namespace KNPZebraLionLayer
 			double lon,
 			double imageCoordX,
 			double imageCoordY,
+            double maxSpeed,
 			double zebraViewFactor)
 			:
 		base(layer, registerAgent, unregisterAgent, environment, id, shape, collisionType:CollisionType.Ghost) {
@@ -46,6 +48,7 @@ namespace KNPZebraLionLayer
 			_lon = lon;
 			_imageCoordX = imageCoordX;
 			_imageCoordY = imageCoordY;
+            maxSpeed = 20;
 			state = "chill";
 
 			SensorArray.AddSensor(new LionSensor(environment));
@@ -72,8 +75,9 @@ namespace KNPZebraLionLayer
 
 		#region IAgentLogic implementation
 
-		Lion checkIfLionComming ()
+        private IInteraction LookOut()
 		{
+            IInteraction movement = Mover.Continuous.Move(0, 0, 0);
 			var lions = SensorArray.Get<LionSensor, List<Lion>>();
 			Lion closestLion = null;
 
@@ -93,31 +97,27 @@ namespace KNPZebraLionLayer
 
 				if (this.GetPosition ().GetDistance (closestLion.GetPosition ()) <= zebraViewFactor) {
 					state = "flucht";
-				}
+                    movement= Mover.Continuous.Move(maxSPeed, closestLion.GetDirection());
+				
+                }
 			}
-
-			closestLion
-
-
-
-
-
+            return movement;
 		}
 
 		public DalskiAgent.Interactions.IInteraction Reason ()
 		{
+            IInteraction movement = Mover.Continuous.Move(0, 0, 0);
 			switch (state) {
 
 			case "chill":
-				var possibleLion = checkIfLionComming();
-					if (possibleLion != null) {
-							
-					} else {
-						
-					}
+                    movement = LookOut();
+                    break;
+                    
 			case "flucht":
-				
+                   movement=  Mover.Continuous.Move(maxSPeed, GetDirection());
+                   break;
 			}
+            return movement;
 		}
 
 		#endregion

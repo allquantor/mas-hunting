@@ -70,7 +70,7 @@ namespace KNPZebraLionLayer
 
 
 		private IInteraction searching() {
-
+            IInteraction movement = Mover.Continuous.Move(0, 0, 0);
 			var zebras = SensorArray.Get<ZebraSensor, List<Zebra>>();
 			Zebra closest = null;
 
