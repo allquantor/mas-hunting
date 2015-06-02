@@ -34,6 +34,8 @@ namespace KNPLionLayer.Agents
 		private double maxSPeed;
 		private string strategy;
 		private double sightRange;
+		private	Double criticalDistance;
+
 
 
 		public Lion
@@ -47,7 +49,9 @@ namespace KNPLionLayer.Agents
 			double lon,
 			double imageCoordX,
 			double imageCoordY,
-			Lion prideLeader)
+			Lion prideLeader,
+			Double criticalDistance
+			)
 			:
 		base(layer, registerAgent, unregisterAgent, environment, id, shape, collisionType:CollisionType.Ghost) {
 			_lat = lat;
@@ -56,9 +60,47 @@ namespace KNPLionLayer.Agents
 			_imageCoordY = imageCoordY;
 			leading = true;
 			state = "search";
+			criticalDistance = 30.0;
 
 			SensorArray.AddSensor(new ZebraSensor(environment));
 		}
+
+
+		private IInteraction searching() {
+
+			IEnumerable<Zebra> zebras = SensorArray.Get<ZebraSensor, IEnumerable<Zebra>>();
+			if (zebras.Count > 0) {
+				Zebra closest;
+				double distance;
+				double nearest_distance = double.MaxValue;
+
+				foreach (Zebra z in zebras) {
+					Zebra ze = (Zebra)z;
+					distance = GetPosition ().GetDistance (ze.GetPosition ());
+					if (distance < nearest_distance) {
+						closest = ze;
+						nearest_distance = distance;
+
+					}
+				}
+				hunted_zebra = closest;
+				state = "stalking";
+				return Mover.Continuous.Move (10, Mover.CalculateDirectionToTarget (hunted_zebra.GetPosition ()));
+			} else {
+				// todo implement follow the leader here or something that kind
+				return Mover.Continuous.Move(10, 10,10);
+			}
+
+		}
+
+
+		private IInteraction stalinkg() {
+			if(this.GetPosition().GetDistance(hunted_zebra.GetPosition())<= criticalDistance)  {
+			}
+		}
+
+
+
 
 		public IInteraction Reason() {
 
@@ -70,24 +112,23 @@ namespace KNPLionLayer.Agents
 
 			}
 
+			switch (state) {
+			case "searching":
+				returnInteraction = searching ();
+				break;
+			case "stalking":
+				returnInteraction;
+				break;
+			case "hunting":
+				returnInteraction;
+				break;
+			}
+
             if (state == "searching")
             {
 
-                IEnumerable<Zebra> zebras = SensorArray.Get<ZebraSensor, IEnumerable<Zebra>>();
-                Zebra closest;
-                double distance ;
-                double nearest_distance = double.MaxValue;
-                foreach (Zebra z in zebras)
-                {
-                    Zebra ze = (Zebra)z;
-                    distance = GetPosition().GetDistance( ze.GetPosition());
-                    if (distance < nearest_distance)
-                    {
-                        closest = ze;
-                        nearest_distance = distance;
-
-                    }
-                }
+               
+					
                 if (strategy == "none")
                 {
                     hunted_zebra = closest;
