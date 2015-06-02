@@ -12,6 +12,8 @@ using NetTopologySuite.Geometries;
 using SpatialAPI.Entities.Movement;
 using SpatialAPI.Entities.Transformation;
 using SpatialAPI.Environment;
+using KNPElevationLayer;
+using KNPEnvironmentLayer;
 using SpatialAPI.Shape;
 using KNPZebraLionLayer;
 
@@ -44,13 +46,13 @@ namespace KNPZebraLionLayer
 			RegisterAgent registerAgent,
 			UnregisterAgent unregisterAgent,
 			IEnvironment environment,
+			IKNPElevationLayer elevationLayer,
 			Guid id,
 			IShape shape,
 			double lat,
 			double lon,
 			double imageCoordX,
 			double imageCoordY,
-			Lion prideLeader,
 			Double criticalDistance
 			)
 			:

@@ -13,7 +13,12 @@ using LCConnector.TransportTypes;
 using LifeAPI.Layer;
 using Mono.Addins;
 using SpatialAPI.Environment;
+using SpatialAPI.Shape;
 using ESC = EnvironmentServiceComponent.Implementation.EnvironmentServiceComponent;
+using SpatialAPI.Entities.Movement;
+using SpatialAPI.Entities.Transformation;
+using SpatialAPI.Environment;
+using SpatialAPI.Shape;
 
 [assembly: Addin]
 [assembly: AddinDependency("LayerContainer", "0.1")]
@@ -68,21 +73,57 @@ namespace KNPZebraLionLayer {
 			_csvLogger = new LayerLoggerCsv(csvDirectoryPath: "./", csvFileName: "output" + timeStamp + ".csv", csvDelimiter: ";");
 
 
-			//var agentInitConfig = layerInitData.AgentInitConfigs.First();
-			// Create agents
+			var lionAgentInitConfig = layerInitData.AgentInitConfigs.First();
+			var zebraAgentInitConfig = lionAgentInitConfig; //layerInitData.AgentInitConfigs;
+
+
+			var lionCoordinates = new Coordinate[3];
+			lionCoordinates [0] = new Coordinate (0, 0);
+			lionCoordinates [1] = new Coordinate (5, 2);
+			lionCoordinates [2] = new Coordinate (10, 0);
+			var criticalDistance = 50;
+
+			var zebraCoordinates = new Coordinate[1];
+			zebraCoordinates [0] = new Coordinate (50,0);
+
+			for(var i=0; i < lionAgentInitConfig.RealAgentCount; i++) {
+				var imageCoords = _elevationLayer.TransformToImage(lionCoordinates[i].X, lionCoordinates[i].Y);
+				IShape animalShape = new Cuboid (
+					new Vector3 (1, 1, 1),
+					new Vector3 (imageCoords.X, 0, imageCoords.Y));
+				_lionAgents.Add(
+					lionAgentInitConfig.RealAgentIds[i],
+					new Lion(this, regHndl, unregHndl, _environment, _elevationLayer, lionAgentInitConfig.RealAgentIds[i],animalShape, lionCoordinates[i].X, lionCoordinates[i].Y, imageCoords.X, imageCoords.Y, criticalDistance)
+				);
+			}
+
+			for(var i=0; i < zebraAgentInitConfig.RealAgentCount; i++) {
+				var imageCoords = _elevationLayer.TransformToImage(lionCoordinates[i].X, lionCoordinates[i].Y);
+				IShape animalShape = new Cuboid (
+					new Vector3 (1, 1, 1),
+					new Vector3 (imageCoords.X, 0, imageCoords.Y));
+				_zebraAgents.Add(
+					zebraAgentInitConfig.RealAgentIds[i],
+					new Zebra(this, regHndl, unregHndl, _environment, _elevationLayer, zebraAgentInitConfig.RealAgentIds[i],animalShape, lionCoordinates[i].X, lionCoordinates[i].Y, imageCoords.X, imageCoords.Y)
+				);
+			}
 
 			return true;
 		}
+
 
 		public ILion GetLionById (Guid id)
 		{
 			return _lionAgents [id];
 		}
 
+
 		public IZebra GetZebraById (Guid id)
 		{
 			return _zebraAgents [id];
 		}
+
+
 		/// <summary>
 		///     Returns the current tick.
 		/// </summary>
@@ -111,8 +152,14 @@ namespace KNPZebraLionLayer {
 
 
 		public void Tick() {
+			
 		}
-		public void PreTick() {}
+
+
+		public void PreTick() {
+			
+		}
+
 
 		#endregion
 

@@ -5,6 +5,7 @@ using SpatialAPI.Environment;
 using SpatialAPI.Shape;
 using SpatialAPI.Entities.Transformation;
 using SpatialAPI.Entities.Movement;
+using KNPElevationLayer;
 
 namespace KNPZebraLionLayer
 {
@@ -31,6 +32,7 @@ namespace KNPZebraLionLayer
 			RegisterAgent registerAgent,
 			UnregisterAgent unregisterAgent,
 			IEnvironment environment,
+			IKNPElevationLayer elevationLayer,
 			Guid id,
 			IShape shape,
 			double lat,
