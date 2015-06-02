@@ -38,6 +38,7 @@ namespace KNPZebraLion
 
 
 
+
 		public Lion
 		(ILayer layer,
 			RegisterAgent registerAgent,
@@ -69,8 +70,9 @@ namespace KNPZebraLion
 		private IInteraction searching() {
 
 			var zebras = SensorArray.Get<ZebraSensor, List<Zebra>>();
+			Zebra closest = null;
+
 			if (zebras.Count > 0) {
-				Zebra closest;
 				double distance;
 				double nearest_distance = double.MaxValue;
 
@@ -115,7 +117,7 @@ namespace KNPZebraLion
 
 			var mr = SensorArray.Get<MovementSensor, MovementResult>();
 
-            IInteraction returnInteraction ;
+            IInteraction returnInteraction = null ;
 
 			if (mr != null) {
 
@@ -132,6 +134,8 @@ namespace KNPZebraLion
 				returnInteraction = hunting();
 				break;
 			}
+
+			return returnInteraction;
 		}
 
 		public JsonProperty[] ToJson() {
