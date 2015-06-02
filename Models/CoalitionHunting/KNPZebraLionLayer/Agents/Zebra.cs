@@ -60,9 +60,9 @@ namespace KNPZebraLayer
 		}
 		}
 
-		public int getStatus ()
+		public int getStatus ()    
 		{
-			throw new NotImplementedException ();
+			return 1;
 		}
 
 		#endregion
