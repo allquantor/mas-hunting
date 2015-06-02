@@ -38,6 +38,7 @@ namespace KNPZebraLionLayer
 
 
 
+
 		public Lion
 		(ILayer layer,
 			RegisterAgent registerAgent,
@@ -68,9 +69,10 @@ namespace KNPZebraLionLayer
 
 		private IInteraction searching() {
 
-			var zebras = SensorArray.Get<ZebraSensor, IEnumerable<Zebra>>();
-			if (zebras.Count() > 0) {
-				Zebra closest;
+			var zebras = SensorArray.Get<ZebraSensor, List<Zebra>>();
+			Zebra closest = null;
+
+			if (zebras.Count > 0) {
 				double distance;
 				double nearest_distance = double.MaxValue;
 
@@ -83,7 +85,7 @@ namespace KNPZebraLionLayer
 
 					}
 				}
-				hunted_zebra = closest;
+                hunted_zebra = closest;
 				state = "stalking";
 				return Mover.Continuous.Move (preySpeed, Mover.CalculateDirectionToTarget (hunted_zebra.GetPosition ()));
 			} else {
@@ -115,7 +117,7 @@ namespace KNPZebraLionLayer
 
 			var mr = SensorArray.Get<MovementSensor, MovementResult>();
 
-            IInteraction returnInteraction ;
+            IInteraction returnInteraction = null ;
 
 			if (mr != null) {
 
@@ -132,6 +134,8 @@ namespace KNPZebraLionLayer
 				returnInteraction = hunting();
 				break;
 			}
+
+			return returnInteraction;
 		}
 
 		public JsonProperty[] ToJson() {
