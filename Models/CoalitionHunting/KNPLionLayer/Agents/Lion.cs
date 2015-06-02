@@ -95,25 +95,31 @@ namespace KNPLionLayer.Agents
             {
                 double distance = GetPosition().GetDistance(hunted_zebra.GetDistance());
                 if(distance > 40.0){
-                Mover.Continuous.Move(10, hunted_zebra.GetDirection());
+                Mover.Continuous.Move(10, Mover.CalculateDirectionToTarget(hunted_zebra));
                 }
                 else {
                     state = "hunting";
                 }
 
             }
+            if (state == "hunting")
+            {
+                hunted_zebra.StartHunt(GetDirection());
+                
+
+            }
 
 			//List<Coordinate> waterPoints = SensorArray.Get<WaterPointSensor, List<Coordinate>>();
 
-			if (leading)
-			{
+			//if (leading)
+			//{
 				// todo: find target
-				return Mover.Continuous.Move(10,0,50);
-			}
-			else
-			{
-				return Mover.Continuous.Move(10, prideLeader.GetDirection());
-			}
+				//return Mover.Continuous.Move(10,0,50);
+			//}
+			//else
+			//{
+			//	return Mover.Continuous.Move(10, prideLeader.GetDirection());
+			//}
 		}
 
 		public JsonProperty[] ToJson() {
