@@ -10,7 +10,7 @@ namespace KNPZebraLayer
 {
 	public class Zebra :SpatialAgent,IZebra
 	{
-
+		
 
 
 		private readonly double _lat;
@@ -58,9 +58,9 @@ namespace KNPZebraLayer
 		public Direction GetDirection() {
 			return SpatialData.Direction;
 		}
-		}
 
-		public int getStatus ()    
+
+		public int GetStatus ()    
 		{
 			return 1;
 		}

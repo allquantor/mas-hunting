@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DalskiAgent.Perception;
 using SpatialAPI.Environment;
+using KNPZebraLayer;
 
 
 namespace KNPLionLayer.Sensors
@@ -20,7 +21,8 @@ namespace KNPLionLayer.Sensors
 		public object Sense()
 		{
 			IEnumerable<Zebra> elephants =  environment.ExploreAll().OfType<Zebra>();
-			return elephants;
+			//return elephants;
+			return 1;
 
 			// Einschränkung über die Postion des gesehenen Elefanten und der eigenen Position.
 		}
