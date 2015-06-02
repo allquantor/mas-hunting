@@ -85,17 +85,26 @@ namespace KNPLionLayer.Agents
 				}
 				hunted_zebra = closest;
 				state = "stalking";
-				return Mover.Continuous.Move (10, Mover.CalculateDirectionToTarget (hunted_zebra.GetPosition ()));
+				return Mover.Continuous.Move (preySpeed, Mover.CalculateDirectionToTarget (hunted_zebra.GetPosition ()));
 			} else {
 				// todo implement follow the leader here or something that kind
-				return Mover.Continuous.Move(10, 10,10);
+				return Mover.Continuous.Move(preySpeed, 10,10);
 			}
 
 		}
 
+		private IInteraction hunting ()
+		{
+			return Mover.Continuous.Move (maxSPeed, Mover.CalculateDirectionToTarget (hunted_zebra.GetPosition ()));
+		}
 
 		private IInteraction stalinkg() {
-			if(this.GetPosition().GetDistance(hunted_zebra.GetPosition())<= criticalDistance)  {
+			if(this.GetPosition().GetDistance(hunted_zebra.GetPosition()) <= criticalDistance)  {
+				state = "hunting";
+				return hunting();
+			} else {
+				return Mover.Continuous.Move (preySpeed, Mover.CalculateDirectionToTarget (hunted_zebra.GetPosition ()));
+
 			}
 		}
 
@@ -117,10 +126,10 @@ namespace KNPLionLayer.Agents
 				returnInteraction = searching ();
 				break;
 			case "stalking":
-				returnInteraction;
+				returnInteraction = stalinkg();
 				break;
 			case "hunting":
-				returnInteraction;
+				returnInteraction = hunting();
 				break;
 			}
 
