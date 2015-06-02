@@ -59,6 +59,8 @@ namespace KNPZebraLionLayer
 			_lon = lon;
 			_imageCoordX = imageCoordX;
 			_imageCoordY = imageCoordY;
+            preySpeed = 10;
+            maxSPeed = 10;
 			leading = true;
 			state = "search";
 			criticalDistance = 30.0;
