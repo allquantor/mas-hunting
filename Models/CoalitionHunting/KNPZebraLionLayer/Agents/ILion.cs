@@ -3,7 +3,7 @@ using DalskiAgent.Reasoning;
 using LayerLoggingService;
 using SpatialAPI.Entities.Transformation;
 
-namespace KNPZebraLion
+namespace KNPZebraLionLayer
 {
 	public interface ILion : ISpatialAgent, IAgentLogic
 	{

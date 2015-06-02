@@ -2,7 +2,7 @@
 using DalskiAgent.Reasoning;
 using SpatialAPI.Entities.Transformation;
 
-namespace KNPZebraLayer
+namespace KNPZebraLionLayer
 {
 	public interface IZebra  : ISpatialAgent, IAgentLogic
 	{

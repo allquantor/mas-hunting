@@ -6,7 +6,7 @@ using SpatialAPI.Shape;
 using SpatialAPI.Entities.Transformation;
 using SpatialAPI.Entities.Movement;
 
-namespace KNPZebraLayer
+namespace KNPZebraLionLayer
 {
 	public class Zebra :SpatialAgent,IZebra
 	{

@@ -15,7 +15,7 @@ using SpatialAPI.Environment;
 using SpatialAPI.Shape;
 using KNPZebraLayer;
 
-namespace KNPZebraLion
+namespace KNPZebraLionLayer
 {
 	public class Lion :SpatialAgent, ILion
 

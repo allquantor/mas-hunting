@@ -8,6 +8,7 @@ using Hik.Communication.ScsServices.Service;
 using KNPElevationLayer;
 using KNPEnvironmentLayer;
 using LayerLoggingService;
+using KNPZebraLayer;
 using LCConnector.TransportTypes;
 using LifeAPI.Layer;
 using Mono.Addins;
@@ -17,7 +18,7 @@ using ESC = EnvironmentServiceComponent.Implementation.EnvironmentServiceCompone
 [assembly: Addin]
 [assembly: AddinDependency("LayerContainer", "0.1")]
 
-namespace KNPZebraLion {
+namespace KNPZebraLionLayer {
 
 
 	/// <summary>
@@ -31,9 +32,10 @@ namespace KNPZebraLion {
 		private readonly IKNPElevationLayer _elevationLayer;
 		private long _tick; // Current tick.   
 
-		//private LayerLogger _csvLogger; // Logger for CSV file output.
+		private ILayerLogger _csvLogger; // Logger for CSV file output.
 
-		private Dictionary<Guid, ILion> _agents; // ID-to-agent mapping.
+		private Dictionary<Guid, ILion> _lionAgents; // ID-to-agent mapping.
+		private Dictionary<Guid, IZebra> _zebraAgents; // ID-to-agent mapping.
 		// Current season.
 
 
@@ -46,7 +48,8 @@ namespace KNPZebraLion {
 			_environment = environment;
 			_elevationLayer = elevationLayer;
 			_startTime = DateTime.Now.ToString("s");
-			_agents = new Dictionary<Guid, ILion>();
+			_lionAgents = new Dictionary<Guid, ILion>();
+			_zebraAgents = new Dictionary<Guid, IZebra>();
 		}
 
 		#region ISteppedActiveLayer Members
@@ -62,8 +65,7 @@ namespace KNPZebraLion {
 
 			// Create file logger.
 			var timeStamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss-fff");
-
-			//_csvLogger = new LayerLogger(csvDirectoryPath: "./", csvFileName: "output" + timeStamp + ".csv", csvDelimiter: ";");
+			_csvLogger = new LayerLogger(csvDirectoryPath: "./", csvFileName: "output" + timeStamp + ".csv", csvDelimiter: ";");
 
 
 			//var agentInitConfig = layerInitData.AgentInitConfigs.First();
@@ -74,9 +76,13 @@ namespace KNPZebraLion {
 
 		public ILion GetLionById (Guid id)
 		{
-			throw new NotImplementedException ();
+			return _lionAgents [id];
 		}
 
+		public IZebra GetZebraById (Guid id)
+		{
+			return _zebraAgents [id];
+		}
 		/// <summary>
 		///     Returns the current tick.
 		/// </summary>
