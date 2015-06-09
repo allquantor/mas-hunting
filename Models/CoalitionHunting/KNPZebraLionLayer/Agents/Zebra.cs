@@ -23,12 +23,9 @@ namespace KNPZebraLionLayer
 		private string state;
 		private Direction preyDirection;
 		private double preySpeed;
-		private double maxSpeed;
 		private string strategy;
-
-		private Double zebraViewFactor;
-
-
+		private double maxSPeed = 30;
+		private Double zebraViewFactor = 50;
 
 		public Zebra 
 		(ILayer layer,
@@ -48,7 +45,6 @@ namespace KNPZebraLionLayer
 			_lon = lon;
 			_imageCoordX = imageCoordX;
 			_imageCoordY = imageCoordY;
-			maxSpeed = 20;
 			state = "chill";
 
 			SensorArray.AddSensor(new LionSensor(environment));
