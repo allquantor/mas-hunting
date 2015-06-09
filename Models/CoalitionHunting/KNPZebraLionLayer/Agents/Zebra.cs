@@ -14,8 +14,6 @@ namespace KNPZebraLionLayer
 	public class Zebra :SpatialAgent,IZebra
 	{
 		
-
-
 		private readonly double _lat;
 		private readonly double _lon;
 		private readonly double _imageCoordX;
@@ -24,7 +22,7 @@ namespace KNPZebraLionLayer
 		private Direction preyDirection;
 		private double preySpeed;
 		private string strategy;
-		private double maxSPeed = 30;
+		private double maxSpeed = 30;
 		private Double zebraViewFactor = 50;
 
 		public Zebra 
