@@ -23,7 +23,7 @@ namespace KNPZebraLionLayer
 		private string state;
 		private Direction preyDirection;
 		private double preySpeed;
-		private double maxSPeed;
+		private double maxSpeed;
 		private string strategy;
 
 		private Double zebraViewFactor;
@@ -41,16 +41,14 @@ namespace KNPZebraLionLayer
 			double lat,
 			double lon,
 			double imageCoordX,
-			double imageCoordY,
-            double maxSpeed,
-			double zebraViewFactor)
+			double imageCoordY)
 			:
 		base(layer, registerAgent, unregisterAgent, environment, id, shape, collisionType:CollisionType.Ghost) {
 			_lat = lat;
 			_lon = lon;
 			_imageCoordX = imageCoordX;
 			_imageCoordY = imageCoordY;
-            maxSpeed = 20;
+			maxSpeed = 20;
 			state = "chill";
 
 			SensorArray.AddSensor(new LionSensor(environment));
@@ -99,7 +97,7 @@ namespace KNPZebraLionLayer
 
 				if (this.GetPosition ().GetDistance (closestLion.GetPosition ()) <= zebraViewFactor) {
 					state = "flucht";
-                    movement= Mover.Continuous.Move(maxSPeed, closestLion.GetDirection());
+                    movement= Mover.Continuous.Move(maxSpeed, closestLion.GetDirection());
 				
                 }
 			}
@@ -116,7 +114,7 @@ namespace KNPZebraLionLayer
                     break;
                     
 			case "flucht":
-                   movement=  Mover.Continuous.Move(maxSPeed, GetDirection());
+                   movement=  Mover.Continuous.Move(maxSpeed, GetDirection());
                    break;
 			}
             return movement;

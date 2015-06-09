@@ -25,7 +25,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Externalconsole>true</Externalconsole>
-    <Commandlineparameters>-cli</Commandlineparameters>
+    <Commandlineparameters>-m chunt -c 10</Commandlineparameters>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -51,45 +51,6 @@
     <Reference Include="MarsErrorReporting">
       <HintPath>..\packages\MARSErrorReporting.0.3.51\lib\net45\MarsErrorReporting.dll</HintPath>
     </Reference>
-    <Reference Include="SpatialAPI">
-      <HintPath>..\packages\SpatialAPI.0.4.24\lib\net45\SpatialAPI.dll</HintPath>
-    </Reference>
-    <Reference Include="Ionic.Zip">
-      <HintPath>..\packages\SimulationManager.0.3.80\lib\net45\Ionic.Zip.dll</HintPath>
-    </Reference>
-    <Reference Include="LayerNameService">
-      <HintPath>..\packages\SimulationManager.0.3.80\lib\net45\LayerNameService.dll</HintPath>
-    </Reference>
-    <Reference Include="ModelContainer">
-      <HintPath>..\packages\SimulationManager.0.3.80\lib\net45\ModelContainer.dll</HintPath>
-    </Reference>
-    <Reference Include="RuntimeEnvironment">
-      <HintPath>..\packages\SimulationManager.0.3.80\lib\net45\RuntimeEnvironment.dll</HintPath>
-    </Reference>
-    <Reference Include="SimulationManagerFacade">
-      <HintPath>..\packages\SimulationManager.0.3.80\lib\net45\SimulationManagerFacade.dll</HintPath>
-    </Reference>
-    <Reference Include="SimulationManagerShared">
-      <HintPath>..\packages\SimulationManager.0.3.80\lib\net45\SimulationManagerShared.dll</HintPath>
-    </Reference>
-    <Reference Include="SMConnector">
-      <HintPath>..\packages\SimulationManager.0.3.80\lib\net45\SMConnector.dll</HintPath>
-    </Reference>
-    <Reference Include="AppSettingsManager">
-      <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\AppSettingsManager.dll</HintPath>
-    </Reference>
-    <Reference Include="Autofac">
-      <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\Autofac.dll</HintPath>
-    </Reference>
-    <Reference Include="CommonTypes">
-      <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\CommonTypes.dll</HintPath>
-    </Reference>
-    <Reference Include="CustomUtilities">
-      <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\CustomUtilities.dll</HintPath>
-    </Reference>
-    <Reference Include="GeoAPI">
-      <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\GeoAPI.dll</HintPath>
-    </Reference>
     <Reference Include="LayerContainerFacade">
       <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\LayerContainerFacade.dll</HintPath>
     </Reference>
@@ -102,53 +63,95 @@
     <Reference Include="LayerRegistry">
       <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\LayerRegistry.dll</HintPath>
     </Reference>
-    <Reference Include="LCConnector">
-      <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\LCConnector.dll</HintPath>
-    </Reference>
-    <Reference Include="LifeAPI">
-      <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\LifeAPI.dll</HintPath>
-    </Reference>
-    <Reference Include="LIFEViewProtocol">
-      <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\LIFEViewProtocol.dll</HintPath>
-    </Reference>
-    <Reference Include="LNSConnector">
-      <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\LNSConnector.dll</HintPath>
-    </Reference>
-    <Reference Include="log4net">
-      <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\log4net.dll</HintPath>
-    </Reference>
-    <Reference Include="LoggerFactory">
-      <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\LoggerFactory.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Addins">
-      <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\Mono.Addins.dll</HintPath>
-    </Reference>
-    <Reference Include="MulticastAdapter">
-      <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\MulticastAdapter.dll</HintPath>
-    </Reference>
-    <Reference Include="NetTopologySuite">
-      <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\NetTopologySuite.dll</HintPath>
-    </Reference>
-    <Reference Include="NodeRegistry">
-      <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\NodeRegistry.dll</HintPath>
-    </Reference>
     <Reference Include="PartitionManager">
       <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\PartitionManager.dll</HintPath>
-    </Reference>
-    <Reference Include="PowerCollections">
-      <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\PowerCollections.dll</HintPath>
-    </Reference>
-    <Reference Include="protobuf-net">
-      <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\protobuf-net.dll</HintPath>
     </Reference>
     <Reference Include="RTEManager">
       <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\RTEManager.dll</HintPath>
     </Reference>
-    <Reference Include="Scs">
-      <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\Scs.dll</HintPath>
-    </Reference>
     <Reference Include="VisualizationAdapter">
       <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\VisualizationAdapter.dll</HintPath>
+    </Reference>
+    <Reference Include="SpatialAPI">
+      <HintPath>..\packages\SpatialAPI.0.4.31\lib\net45\SpatialAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="AppSettingsManager">
+      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\AppSettingsManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonTypes">
+      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\CommonTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="CustomUtilities">
+      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\CustomUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="GeoAPI">
+      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\GeoAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="LayerNameService">
+      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\LayerNameService.dll</HintPath>
+    </Reference>
+    <Reference Include="LCConnector">
+      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\LCConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="LifeAPI">
+      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\LifeAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="LIFEViewProtocol">
+      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\LIFEViewProtocol.dll</HintPath>
+    </Reference>
+    <Reference Include="LNSConnector">
+      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\LNSConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="LoggerFactory">
+      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\LoggerFactory.dll</HintPath>
+    </Reference>
+    <Reference Include="MARS.Shuttle.SimulationConfig">
+      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\MARS.Shuttle.SimulationConfig.dll</HintPath>
+    </Reference>
+    <Reference Include="ModelContainer">
+      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\ModelContainer.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Addins">
+      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\Mono.Addins.dll</HintPath>
+    </Reference>
+    <Reference Include="MulticastAdapter">
+      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\MulticastAdapter.dll</HintPath>
+    </Reference>
+    <Reference Include="NetTopologySuite">
+      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\NetTopologySuite.dll</HintPath>
+    </Reference>
+    <Reference Include="NodeRegistry">
+      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\NodeRegistry.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerCollections">
+      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\PowerCollections.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="RuntimeEnvironment">
+      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\RuntimeEnvironment.dll</HintPath>
+    </Reference>
+    <Reference Include="Scs">
+      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\Scs.dll</HintPath>
+    </Reference>
+    <Reference Include="SimulationManagerFacade">
+      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\SimulationManagerFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="SimulationManagerShared">
+      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\SimulationManagerShared.dll</HintPath>
+    </Reference>
+    <Reference Include="SMConnector">
+      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\SMConnector.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

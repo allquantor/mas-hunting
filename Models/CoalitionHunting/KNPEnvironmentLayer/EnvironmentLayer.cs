@@ -26,7 +26,7 @@ namespace KNPEnvironmentLayer
         public bool InitLayer(TInitData layerInitData, RegisterAgent registerAgentHandle, UnregisterAgent unregisterAgentHandle) {
             _esc = new EnvironmentServiceComponent.Implementation.EnvironmentServiceComponent();
            // _visualizer = new SimpleVisualizer(_esc);
-            System.Diagnostics.Process.Start("http://localhost:1338");
+            //System.Diagnostics.Process.Start("http://localhost:1338");
             return true;
         }
 

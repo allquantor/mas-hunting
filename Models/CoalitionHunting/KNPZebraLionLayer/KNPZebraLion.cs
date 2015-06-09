@@ -33,7 +33,7 @@ namespace KNPZebraLionLayer {
 	public class KNPZebraLion : ScsService, IKNPZebraLionLayer {
 
 		private readonly string _startTime; // Local time of simulation begin.
-		private readonly IEnvironment _environment; // Spatial environment for the trees. 
+		private readonly IKNPEnvironmentLayer _environment; // Spatial environment for the trees. 
 		private readonly IKNPElevationLayer _elevationLayer;
 		private long _tick; // Current tick.   
 

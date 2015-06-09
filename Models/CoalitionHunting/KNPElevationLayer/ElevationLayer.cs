@@ -11,13 +11,13 @@ using Mono.Addins;
 namespace KNPElevationLayer
 {
     [Extension(typeof(ISteppedLayer))]
-    public class ElevationLayer : LIFEGisActiveLayer, IKNPElevationLayer
+	public class ElevationLayer : LIFEGisActiveLayer, IKNPElevationLayer
     {
 
 
         public override bool InitLayer(TInitData layerInitData, RegisterAgent registerAgentHandle, UnregisterAgent unregisterAgentHandle)
         {
-            var path = Path.Combine("../../../Models/Skukuza/GISData/", "knp_srtm90m.asc");
+			var path = Path.Combine("../../../Models/CoalitionHunting/GISData/", "knp_srtm90m.asc");
             var filePath = Path.GetFullPath(path);
 
             LoadGISData(new Uri(filePath, UriKind.Absolute), "ElevationLayerKNP");
@@ -44,6 +44,11 @@ namespace KNPElevationLayer
         {
             get { return "ElevationLayer"; }
         }
+
+		public void LoadGISDataByWebservice (string gisWebserviceUrl, string imageFormat, int srid, string[] layers, string layerName = "")
+		{
+			throw new NotImplementedException ();
+		}
     }
 }
 
