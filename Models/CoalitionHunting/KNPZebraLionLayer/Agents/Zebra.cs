@@ -23,10 +23,9 @@ namespace KNPZebraLionLayer
 		private string state;
 		private Direction preyDirection;
 		private double preySpeed;
-		private double maxSPeed;
-		private string strategy;
+		private double maxSPeed = 30;
 
-		private Double zebraViewFactor;
+		private Double zebraViewFactor = 50;
 
 
 
@@ -41,16 +40,13 @@ namespace KNPZebraLionLayer
 			double lat,
 			double lon,
 			double imageCoordX,
-			double imageCoordY,
-            double maxSpeed,
-			double zebraViewFactor)
+			double imageCoordY)
 			:
 		base(layer, registerAgent, unregisterAgent, environment, id, shape, collisionType:CollisionType.Ghost) {
 			_lat = lat;
 			_lon = lon;
 			_imageCoordX = imageCoordX;
 			_imageCoordY = imageCoordY;
-            maxSpeed = 20;
 			state = "chill";
 
 			SensorArray.AddSensor(new LionSensor(environment));
