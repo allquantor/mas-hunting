@@ -74,7 +74,7 @@ namespace KNPZebraLionLayer {
 
 
 			var lionAgentInitConfig = layerInitData.AgentInitConfigs.First();
-			var zebraAgentInitConfig = lionAgentInitConfig; //layerInitData.AgentInitConfigs;
+			var zebraAgentInitConfig = layerInitData.AgentInitConfigs[1]; //layerInitData.AgentInitConfigs;
 
 
 			var lionCoordinates = new Coordinate[3];

@@ -26,7 +26,7 @@ namespace KNPZebraLionLayer
 		private Double zebraViewFactor = 50;
 
 		public Zebra 
-		(ILayer layer,
+		(IKNPZebraLionLayer layer,
 			RegisterAgent registerAgent,
 			UnregisterAgent unregisterAgent,
 			IEnvironment environment,
@@ -45,7 +45,7 @@ namespace KNPZebraLionLayer
 			_imageCoordY = imageCoordY;
 			state = "chill";
 
-			SensorArray.AddSensor(new LionSensor(environment));
+			SensorArray.AddSensor(new LionSensor(environment, layer));
 		}
 
 		#region IZebra implementation
@@ -72,7 +72,7 @@ namespace KNPZebraLionLayer
         private IInteraction LookOut()
 		{
             IInteraction movement = Mover.Continuous.Move(0, 0, 0);
-			var lions = SensorArray.Get<LionSensor, List<Lion>>();
+			var lions = SensorArray.Get<LionSensor, List<ILion>>();
 			Lion closestLion = null;
 
 
@@ -114,6 +114,7 @@ namespace KNPZebraLionLayer
             return movement;
 		}
 
+        public Guid AgentGuid { get; set; }
 		#endregion
 	}
 }

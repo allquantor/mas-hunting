@@ -30,6 +30,143 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AgentShadowingService">
+      <HintPath>..\..\..\packages\DalskiAgent.0.4.37\lib\net45\AgentShadowingService.dll</HintPath>
+    </Reference>
+    <Reference Include="AppSettingsManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\LifeAPI.0.3.96\lib\net45\AppSettingsManager.dll</HintPath>
+    </Reference>
+    <Reference Include="ASC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\DalskiAgent.0.4.37\lib\net45\ASC.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\LayerContainer.0.3.96\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="BHVTree, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\DistributedEnvironmentServiceComponent.0.1.15\lib\net45\BHVTree.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonTypes, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\LayerContainer.0.3.96\lib\net45\CommonTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="CustomUtilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\LifeAPI.0.3.96\lib\net45\CustomUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="DalskiAgent, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\DalskiAgent.0.4.37\lib\net45\DalskiAgent.dll</HintPath>
+    </Reference>
+    <Reference Include="EnvironmentServiceComponent, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\DistributedEnvironmentServiceComponent.0.1.15\lib\net45\EnvironmentServiceComponent.dll</HintPath>
+    </Reference>
+    <Reference Include="GeoAPI, Version=1.7.3.0, Culture=neutral, PublicKeyToken=a1a0da7def465678, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\LifeAPI.0.3.96\lib\net45\GeoAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="LayerContainerFacade, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\LayerContainer.0.3.96\lib\net45\LayerContainerFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="LayerContainerShared, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\LayerContainer.0.3.96\lib\net45\LayerContainerShared.dll</HintPath>
+    </Reference>
+    <Reference Include="LayerFactory, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\LayerContainer.0.3.96\lib\net45\LayerFactory.dll</HintPath>
+    </Reference>
+    <Reference Include="LayerRegistry, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\LayerContainer.0.3.96\lib\net45\LayerRegistry.dll</HintPath>
+    </Reference>
+    <Reference Include="LCConnector, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\LifeAPI.0.3.96\lib\net45\LCConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="LifeAPI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\LifeAPI.0.3.96\lib\net45\LifeAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="LIFEUtilities">
+      <HintPath>..\..\..\packages\DalskiAgent.0.4.37\lib\net45\LIFEUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="LIFEViewProtocol, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\LifeAPI.0.3.96\lib\net45\LIFEViewProtocol.dll</HintPath>
+    </Reference>
+    <Reference Include="LNSConnector, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\LayerContainer.0.3.96\lib\net45\LNSConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\LifeAPI.0.3.96\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="LoggerFactory, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\LayerContainer.0.3.96\lib\net45\LoggerFactory.dll</HintPath>
+    </Reference>
+    <Reference Include="MARS.Shuttle.SimulationConfig, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\LifeAPI.0.3.96\lib\net45\MARS.Shuttle.SimulationConfig.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Addins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\LifeAPI.0.3.96\lib\net45\Mono.Addins.dll</HintPath>
+    </Reference>
+    <Reference Include="MulticastAdapter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\LifeAPI.0.3.96\lib\net45\MulticastAdapter.dll</HintPath>
+    </Reference>
+    <Reference Include="NetTopologySuite, Version=1.13.3.0, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\LifeAPI.0.3.96\lib\net45\NetTopologySuite.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\..\..\packages\DistributedEnvironmentServiceComponent.0.1.15\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="NodeRegistry, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\LayerContainer.0.3.96\lib\net45\NodeRegistry.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\DistributedEnvironmentServiceComponent.0.1.15\lib\net45\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="PartitionManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\LayerContainer.0.3.96\lib\net45\PartitionManager.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerCollections, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2573bf8a1bdddcd5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\LifeAPI.0.3.96\lib\net45\PowerCollections.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\DistributedEnvironmentServiceComponent.0.1.15\lib\net45\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="RTEManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\LayerContainer.0.3.96\lib\net45\RTEManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Scs, Version=1.1.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\LifeAPI.0.3.96\lib\net45\Scs.dll</HintPath>
+    </Reference>
+    <Reference Include="SpatialAPI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\DistributedEnvironmentServiceComponent.0.1.15\lib\net45\SpatialAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="SpatialObjectOctree, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\DistributedEnvironmentServiceComponent.0.1.15\lib\net45\SpatialObjectOctree.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="LayerLoggingService">
       <HintPath>..\..\..\packages\LayerLoggingService.0.1.14\lib\net45\LayerLoggingService.dll</HintPath>
@@ -46,104 +183,9 @@
     <Reference Include="RabbitMQ.Client">
       <HintPath>..\..\..\packages\LayerLoggingService.0.1.14\lib\net45\RabbitMQ.Client.dll</HintPath>
     </Reference>
-    <Reference Include="Autofac">
-      <HintPath>..\..\..\packages\LayerContainer.0.3.80\lib\net45\Autofac.dll</HintPath>
-    </Reference>
-    <Reference Include="CommonTypes">
-      <HintPath>..\..\..\packages\LayerContainer.0.3.80\lib\net45\CommonTypes.dll</HintPath>
-    </Reference>
-    <Reference Include="LayerContainerFacade">
-      <HintPath>..\..\..\packages\LayerContainer.0.3.80\lib\net45\LayerContainerFacade.dll</HintPath>
-    </Reference>
-    <Reference Include="LayerContainerShared">
-      <HintPath>..\..\..\packages\LayerContainer.0.3.80\lib\net45\LayerContainerShared.dll</HintPath>
-    </Reference>
-    <Reference Include="LayerFactory">
-      <HintPath>..\..\..\packages\LayerContainer.0.3.80\lib\net45\LayerFactory.dll</HintPath>
-    </Reference>
-    <Reference Include="LayerRegistry">
-      <HintPath>..\..\..\packages\LayerContainer.0.3.80\lib\net45\LayerRegistry.dll</HintPath>
-    </Reference>
-    <Reference Include="LNSConnector">
-      <HintPath>..\..\..\packages\LayerContainer.0.3.80\lib\net45\LNSConnector.dll</HintPath>
-    </Reference>
-    <Reference Include="LoggerFactory">
-      <HintPath>..\..\..\packages\LayerContainer.0.3.80\lib\net45\LoggerFactory.dll</HintPath>
-    </Reference>
-    <Reference Include="NodeRegistry">
-      <HintPath>..\..\..\packages\LayerContainer.0.3.80\lib\net45\NodeRegistry.dll</HintPath>
-    </Reference>
-    <Reference Include="PartitionManager">
-      <HintPath>..\..\..\packages\LayerContainer.0.3.80\lib\net45\PartitionManager.dll</HintPath>
-    </Reference>
-    <Reference Include="RTEManager">
-      <HintPath>..\..\..\packages\LayerContainer.0.3.80\lib\net45\RTEManager.dll</HintPath>
-    </Reference>
-    <Reference Include="VisualizationAdapter">
-      <HintPath>..\..\..\packages\LayerContainer.0.3.80\lib\net45\VisualizationAdapter.dll</HintPath>
-    </Reference>
-    <Reference Include="MARS.Shuttle.SimulationConfig">
-      <HintPath>..\..\..\packages\LifeAPI.0.3.81\lib\net45\MARS.Shuttle.SimulationConfig.dll</HintPath>
-    </Reference>
-    <Reference Include="AppSettingsManager">
-      <HintPath>..\..\..\packages\DalskiAgent.0.4.34\lib\net45\AppSettingsManager.dll</HintPath>
-    </Reference>
-    <Reference Include="ASC">
-      <HintPath>..\..\..\packages\DalskiAgent.0.4.34\lib\net45\ASC.dll</HintPath>
-    </Reference>
-    <Reference Include="CustomUtilities">
-      <HintPath>..\..\..\packages\DalskiAgent.0.4.34\lib\net45\CustomUtilities.dll</HintPath>
-    </Reference>
-    <Reference Include="DalskiAgent">
-      <HintPath>..\..\..\packages\DalskiAgent.0.4.34\lib\net45\DalskiAgent.dll</HintPath>
-    </Reference>
-    <Reference Include="GeoAPI">
-      <HintPath>..\..\..\packages\DalskiAgent.0.4.34\lib\net45\GeoAPI.dll</HintPath>
-    </Reference>
-    <Reference Include="LCConnector">
-      <HintPath>..\..\..\packages\DalskiAgent.0.4.34\lib\net45\LCConnector.dll</HintPath>
-    </Reference>
-    <Reference Include="LifeAPI">
-      <HintPath>..\..\..\packages\DalskiAgent.0.4.34\lib\net45\LifeAPI.dll</HintPath>
-    </Reference>
-    <Reference Include="LIFEViewProtocol">
-      <HintPath>..\..\..\packages\DalskiAgent.0.4.34\lib\net45\LIFEViewProtocol.dll</HintPath>
-    </Reference>
-    <Reference Include="log4net">
-      <HintPath>..\..\..\packages\DalskiAgent.0.4.34\lib\net45\log4net.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Addins">
-      <HintPath>..\..\..\packages\DalskiAgent.0.4.34\lib\net45\Mono.Addins.dll</HintPath>
-    </Reference>
-    <Reference Include="MulticastAdapter">
-      <HintPath>..\..\..\packages\DalskiAgent.0.4.34\lib\net45\MulticastAdapter.dll</HintPath>
-    </Reference>
-    <Reference Include="NetTopologySuite">
-      <HintPath>..\..\..\packages\DalskiAgent.0.4.34\lib\net45\NetTopologySuite.dll</HintPath>
-    </Reference>
-    <Reference Include="PowerCollections">
-      <HintPath>..\..\..\packages\DalskiAgent.0.4.34\lib\net45\PowerCollections.dll</HintPath>
-    </Reference>
-    <Reference Include="protobuf-net">
-      <HintPath>..\..\..\packages\DalskiAgent.0.4.34\lib\net45\protobuf-net.dll</HintPath>
-    </Reference>
-    <Reference Include="Scs">
-      <HintPath>..\..\..\packages\DalskiAgent.0.4.34\lib\net45\Scs.dll</HintPath>
-    </Reference>
-    <Reference Include="BHVTree">
-      <HintPath>..\..\..\packages\EnvironmentServiceComponent.0.4.31\lib\net45\BHVTree.dll</HintPath>
-    </Reference>
-    <Reference Include="EnvironmentServiceComponent">
-      <HintPath>..\..\..\packages\EnvironmentServiceComponent.0.4.31\lib\net45\EnvironmentServiceComponent.dll</HintPath>
-    </Reference>
-    <Reference Include="OpenTK">
-      <HintPath>..\..\..\packages\EnvironmentServiceComponent.0.4.31\lib\net45\OpenTK.dll</HintPath>
-    </Reference>
-    <Reference Include="SpatialAPI">
-      <HintPath>..\..\..\packages\EnvironmentServiceComponent.0.4.31\lib\net45\SpatialAPI.dll</HintPath>
-    </Reference>
-    <Reference Include="SpatialObjectOctree">
-      <HintPath>..\..\..\packages\EnvironmentServiceComponent.0.4.31\lib\net45\SpatialObjectOctree.dll</HintPath>
+    <Reference Include="VisualizationAdapter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\LayerContainer.0.3.96\lib\net45\VisualizationAdapter.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

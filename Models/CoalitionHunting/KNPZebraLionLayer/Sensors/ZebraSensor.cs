@@ -20,9 +20,9 @@ namespace KNPZebraLionLayer
 
 		public object Sense()
 		{
-			IEnumerable<Zebra> elephants =  environment.ExploreAll().OfType<Zebra>();
-			//return elephants;
-			return 1;
+			IEnumerable<Zebra> zebras =  environment.ExploreAll().OfType<Zebra>();
+			return zebras;
+			//return 1;
 
 			// Einschränkung über die Postion des gesehenen Elefanten und der eigenen Position.
 		}

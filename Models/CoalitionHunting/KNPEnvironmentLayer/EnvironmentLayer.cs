@@ -9,6 +9,7 @@ using SpatialAPI.Entities.Movement;
 using SpatialAPI.Entities.Transformation;
 using SpatialAPI.Environment;
 using SpatialAPI.Shape;
+using ESC = EnvironmentServiceComponent.Implementation.EnvironmentServiceComponent;
 // using Visualizer;
 
 [assembly: Addin]
@@ -24,7 +25,7 @@ namespace KNPEnvironmentLayer
 
 
         public bool InitLayer(TInitData layerInitData, RegisterAgent registerAgentHandle, UnregisterAgent unregisterAgentHandle) {
-            _esc = new EnvironmentServiceComponent.Implementation.EnvironmentServiceComponent();
+            _esc = new ESC();
            // _visualizer = new SimpleVisualizer(_esc);
             //System.Diagnostics.Process.Start("http://localhost:1338");
             return true;

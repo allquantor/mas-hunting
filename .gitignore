@@ -29,6 +29,7 @@ Models/Skukuza/
 *.opensdf
 *.unsuccessfulbuild
 ipch/
+GISData/
 obj/
 [Bb]in
 [Dd]ebug*/

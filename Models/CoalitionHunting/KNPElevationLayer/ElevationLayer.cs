@@ -20,7 +20,7 @@ namespace KNPElevationLayer
 			var path = Path.Combine("../../../Models/CoalitionHunting/GISData/", "knp_srtm90m.asc");
             var filePath = Path.GetFullPath(path);
 
-            LoadGISData(new Uri(filePath, UriKind.Absolute), "ElevationLayerKNP");
+            LoadGISData(new Uri(filePath, UriKind.Absolute));
 
             return true;
         }

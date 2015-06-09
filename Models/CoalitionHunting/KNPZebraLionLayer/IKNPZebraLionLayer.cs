@@ -7,5 +7,6 @@ namespace KNPZebraLionLayer
 	[ScsService(Version = "0.1")]
 	public interface IKNPZebraLionLayer : ISteppedActiveLayer {
 		ILion GetLionById(Guid id);
+        IZebra GetZebraById(Guid id);
 	}
 }

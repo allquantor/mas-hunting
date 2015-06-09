@@ -167,6 +167,7 @@ namespace KNPZebraLionLayer
         {
             throw new NotImplementedException();
         }
+        public Guid AgentGuid { get; set; }
 
     }
 }

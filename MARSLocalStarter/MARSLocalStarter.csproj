@@ -14,6 +14,21 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <NuGetPackageImportStamp>8b03cd5c</NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -41,9 +56,111 @@
     <ApplicationIcon>Resources\bitmap.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AppSettingsManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LifeAPI.0.3.96\lib\net45\AppSettingsManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LayerContainer.0.3.96\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonTypes, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LayerContainer.0.3.96\lib\net45\CommonTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="CustomUtilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LifeAPI.0.3.96\lib\net45\CustomUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="GeoAPI, Version=1.7.3.0, Culture=neutral, PublicKeyToken=a1a0da7def465678, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LifeAPI.0.3.96\lib\net45\GeoAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="LayerContainerFacade, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LayerContainer.0.3.96\lib\net45\LayerContainerFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="LayerContainerShared, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LayerContainer.0.3.96\lib\net45\LayerContainerShared.dll</HintPath>
+    </Reference>
+    <Reference Include="LayerFactory, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LayerContainer.0.3.96\lib\net45\LayerFactory.dll</HintPath>
+    </Reference>
+    <Reference Include="LayerRegistry, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LayerContainer.0.3.96\lib\net45\LayerRegistry.dll</HintPath>
+    </Reference>
+    <Reference Include="LCConnector, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LifeAPI.0.3.96\lib\net45\LCConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="LifeAPI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LifeAPI.0.3.96\lib\net45\LifeAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="LIFEViewProtocol, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LifeAPI.0.3.96\lib\net45\LIFEViewProtocol.dll</HintPath>
+    </Reference>
+    <Reference Include="LNSConnector, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LayerContainer.0.3.96\lib\net45\LNSConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LifeAPI.0.3.96\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="LoggerFactory, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LayerContainer.0.3.96\lib\net45\LoggerFactory.dll</HintPath>
+    </Reference>
+    <Reference Include="MARS.Shuttle.SimulationConfig, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LifeAPI.0.3.96\lib\net45\MARS.Shuttle.SimulationConfig.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Addins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LifeAPI.0.3.96\lib\net45\Mono.Addins.dll</HintPath>
+    </Reference>
+    <Reference Include="MulticastAdapter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LifeAPI.0.3.96\lib\net45\MulticastAdapter.dll</HintPath>
+    </Reference>
+    <Reference Include="NetTopologySuite, Version=1.13.3.0, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LifeAPI.0.3.96\lib\net45\NetTopologySuite.dll</HintPath>
+    </Reference>
+    <Reference Include="NodeRegistry, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LayerContainer.0.3.96\lib\net45\NodeRegistry.dll</HintPath>
+    </Reference>
+    <Reference Include="PartitionManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LayerContainer.0.3.96\lib\net45\PartitionManager.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerCollections, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2573bf8a1bdddcd5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LifeAPI.0.3.96\lib\net45\PowerCollections.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LifeAPI.0.3.96\lib\net45\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="RTEManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LayerContainer.0.3.96\lib\net45\RTEManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Scs, Version=1.1.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LifeAPI.0.3.96\lib\net45\Scs.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="Atlassian.Jira">
       <HintPath>..\packages\MARSErrorReporting.0.3.51\lib\net45\Atlassian.Jira.dll</HintPath>
@@ -51,44 +168,8 @@
     <Reference Include="MarsErrorReporting">
       <HintPath>..\packages\MARSErrorReporting.0.3.51\lib\net45\MarsErrorReporting.dll</HintPath>
     </Reference>
-    <Reference Include="LayerContainerFacade">
-      <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\LayerContainerFacade.dll</HintPath>
-    </Reference>
-    <Reference Include="LayerContainerShared">
-      <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\LayerContainerShared.dll</HintPath>
-    </Reference>
-    <Reference Include="LayerFactory">
-      <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\LayerFactory.dll</HintPath>
-    </Reference>
-    <Reference Include="LayerRegistry">
-      <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\LayerRegistry.dll</HintPath>
-    </Reference>
-    <Reference Include="PartitionManager">
-      <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\PartitionManager.dll</HintPath>
-    </Reference>
-    <Reference Include="RTEManager">
-      <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\RTEManager.dll</HintPath>
-    </Reference>
-    <Reference Include="VisualizationAdapter">
-      <HintPath>..\packages\LayerContainer.0.3.80\lib\net45\VisualizationAdapter.dll</HintPath>
-    </Reference>
     <Reference Include="SpatialAPI">
       <HintPath>..\packages\SpatialAPI.0.4.31\lib\net45\SpatialAPI.dll</HintPath>
-    </Reference>
-    <Reference Include="AppSettingsManager">
-      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\AppSettingsManager.dll</HintPath>
-    </Reference>
-    <Reference Include="Autofac">
-      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\Autofac.dll</HintPath>
-    </Reference>
-    <Reference Include="CommonTypes">
-      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\CommonTypes.dll</HintPath>
-    </Reference>
-    <Reference Include="CustomUtilities">
-      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\CustomUtilities.dll</HintPath>
-    </Reference>
-    <Reference Include="GeoAPI">
-      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\GeoAPI.dll</HintPath>
     </Reference>
     <Reference Include="Ionic.Zip">
       <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\Ionic.Zip.dll</HintPath>
@@ -96,53 +177,11 @@
     <Reference Include="LayerNameService">
       <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\LayerNameService.dll</HintPath>
     </Reference>
-    <Reference Include="LCConnector">
-      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\LCConnector.dll</HintPath>
-    </Reference>
-    <Reference Include="LifeAPI">
-      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\LifeAPI.dll</HintPath>
-    </Reference>
-    <Reference Include="LIFEViewProtocol">
-      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\LIFEViewProtocol.dll</HintPath>
-    </Reference>
-    <Reference Include="LNSConnector">
-      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\LNSConnector.dll</HintPath>
-    </Reference>
-    <Reference Include="log4net">
-      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\log4net.dll</HintPath>
-    </Reference>
-    <Reference Include="LoggerFactory">
-      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\LoggerFactory.dll</HintPath>
-    </Reference>
-    <Reference Include="MARS.Shuttle.SimulationConfig">
-      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\MARS.Shuttle.SimulationConfig.dll</HintPath>
-    </Reference>
     <Reference Include="ModelContainer">
       <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\ModelContainer.dll</HintPath>
     </Reference>
-    <Reference Include="Mono.Addins">
-      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\Mono.Addins.dll</HintPath>
-    </Reference>
-    <Reference Include="MulticastAdapter">
-      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\MulticastAdapter.dll</HintPath>
-    </Reference>
-    <Reference Include="NetTopologySuite">
-      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\NetTopologySuite.dll</HintPath>
-    </Reference>
-    <Reference Include="NodeRegistry">
-      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\NodeRegistry.dll</HintPath>
-    </Reference>
-    <Reference Include="PowerCollections">
-      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\PowerCollections.dll</HintPath>
-    </Reference>
-    <Reference Include="protobuf-net">
-      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\protobuf-net.dll</HintPath>
-    </Reference>
     <Reference Include="RuntimeEnvironment">
       <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\RuntimeEnvironment.dll</HintPath>
-    </Reference>
-    <Reference Include="Scs">
-      <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\Scs.dll</HintPath>
     </Reference>
     <Reference Include="SimulationManagerFacade">
       <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\SimulationManagerFacade.dll</HintPath>
@@ -152,6 +191,10 @@
     </Reference>
     <Reference Include="SMConnector">
       <HintPath>..\packages\SimulationManager.0.3.96\lib\net45\SMConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="VisualizationAdapter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LayerContainer.0.3.96\lib\net45\VisualizationAdapter.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -184,7 +227,23 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
