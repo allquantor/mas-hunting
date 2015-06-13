@@ -8,6 +8,7 @@ using SpatialAPI.Entities.Movement;
 using KNPElevationLayer;
 using System.Collections.Generic;
 using DalskiAgent.Interactions;
+using LayerLoggingService;
 
 namespace KNPZebraLionLayer
 {
@@ -24,6 +25,7 @@ namespace KNPZebraLionLayer
 		private string strategy;
 		private double maxSpeed = 30;
 		private Double zebraViewFactor = 50;
+		private ILayer _layer;
 
 		public Zebra 
 		(IKNPZebraLionLayer layer,
@@ -44,6 +46,7 @@ namespace KNPZebraLionLayer
 			_imageCoordX = imageCoordX;
 			_imageCoordY = imageCoordY;
 			state = "chill";
+			_layer = layer;
 
 			SensorArray.AddSensor(new LionSensor(environment, layer));
 		}
@@ -112,6 +115,16 @@ namespace KNPZebraLionLayer
                    break;
 			}
             return movement;
+		}
+
+		public JsonProperty[] ToJson() {
+			return new JsonProperty[] {
+				new JsonProperty("Tick", _layer.GetCurrentTick()),
+				new JsonProperty("ID", AgentNumber),
+				new JsonProperty("Lat.", SpatialData.Position.X),
+				new JsonProperty("Lon.", SpatialData.Position.Y),
+				new JsonProperty("status", state)
+			};
 		}
 
         public Guid AgentGuid { get; set; }

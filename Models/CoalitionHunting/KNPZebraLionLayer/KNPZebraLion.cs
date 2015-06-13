@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -19,6 +20,17 @@ using SpatialAPI.Entities.Movement;
 using SpatialAPI.Entities.Transformation;
 using SpatialAPI.Environment;
 using SpatialAPI.Shape;
+using System;
+using System.Collections.Concurrent;
+using System.Threading.Tasks;
+using Hik.Communication.ScsServices.Service;
+using KNPElevationLayer;
+using KNPEnvironmentLayer;
+using LCConnector.TransportTypes;
+using LifeAPI.Layer;
+using Mono.Addins;
+
+
 
 [assembly: Addin]
 [assembly: AddinDependency("LayerContainer", "0.1")]
@@ -38,6 +50,7 @@ namespace KNPZebraLionLayer {
 		private long _tick; // Current tick.   
 
 		private ILayerLogger _csvLogger; // Logger for CSV file output.
+		private ILayerLogger _consoleLogger; // Logger for CSV file output.
 
 		private Dictionary<Guid, ILion> _lionAgents; // ID-to-agent mapping.
 		private Dictionary<Guid, IZebra> _zebraAgents; // ID-to-agent mapping.
@@ -72,9 +85,16 @@ namespace KNPZebraLionLayer {
 			var timeStamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss-fff");
 			_csvLogger = new LayerLoggerCsv(csvDirectoryPath: "./", csvFileName: "output" + timeStamp + ".csv", csvDelimiter: ";");
 
-
 			var lionAgentInitConfig = layerInitData.AgentInitConfigs.First();
 			var zebraAgentInitConfig = layerInitData.AgentInitConfigs[1]; //layerInitData.AgentInitConfigs;
+
+			double MinX = 31.331;
+			double MinY = -25.292;
+			double MaxX = 31.985;
+			double MaxY = -24.997;
+
+			var lat = GetRandomDouble(MinX, MaxX);
+			var lon = GetRandomDouble(MinY, MaxY);
 
 
 			var lionCoordinates = new Coordinate[3];
@@ -169,17 +189,28 @@ namespace KNPZebraLionLayer {
 		/// </summary>
 		/// <param name="p">Logging payload.</param>
 		private void LogTreeDetails() {
-			//			foreach (var marulaTree in _agents.Values) {
-			//				var basic = new JsonObject(new List<JsonProperty>());
-			//				basic.Properties.Add(new JsonProperty("LayerName", "IknpMarulaLayer"));
-			//				basic.Properties.Add(new JsonProperty("starttime", _startTime));
-			//				foreach (var jsonProperty in marulaTree.ToJson())
-			//				{
-			//					basic.Properties.Add(jsonProperty);
-			//				}
-			//
-			//				_csvLogger.Log(basic);
-			//			}
+			foreach (Lion lion in _lionAgents.Values) {
+				var basic = new JsonObject(new List<JsonProperty>());
+				basic.Properties.Add(new JsonProperty("LayerName", "ZebraLionLayer"));
+				basic.Properties.Add(new JsonProperty("starttime", _startTime));
+				foreach (var jsonProperty in lion.ToJson())
+				{
+					basic.Properties.Add(jsonProperty);
+				}
+				_csvLogger.Log (basic);
+			}
+
+			foreach (Zebra zebra in _zebraAgents.Values) {
+				var basic = new JsonObject(new List<JsonProperty>());
+				basic.Properties.Add(new JsonProperty("LayerName", "ZebraLionLayer"));
+				basic.Properties.Add(new JsonProperty("starttime", _startTime));
+				foreach (var jsonProperty in zebra.ToJson())
+				{
+					basic.Properties.Add(jsonProperty);
+				}
+				_csvLogger.Log (basic);
+			}
+				
 		}
 
 		private void LogLayerSummaryToCsv() {
@@ -190,6 +221,12 @@ namespace KNPZebraLionLayer {
 			//					new JsonProperty("AverageHeight", _agents.Values.Average(tree => tree.GetHeight()))
 			//				})
 			//			);
+		}
+
+		private double GetRandomDouble(double minimum, double maximum)
+		{
+			var random = new Random(54897439);
+			return random.NextDouble() * (maximum - minimum) + minimum;
 		}
 	}
 

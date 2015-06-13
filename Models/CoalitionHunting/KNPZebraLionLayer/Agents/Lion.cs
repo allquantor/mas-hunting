@@ -37,6 +37,7 @@ namespace KNPZebraLionLayer
 		private string strategy;
 		private double sightRange;
 		private	Double criticalDistance;
+		private ILayer _layer;
 
 
 
@@ -66,6 +67,7 @@ namespace KNPZebraLionLayer
 			leading = true;
 			state = "search";
 			criticalDistance = 30.0;
+			_layer = layer;
 
 			SensorArray.AddSensor(new ZebraSensor(environment));
 		}
@@ -143,7 +145,13 @@ namespace KNPZebraLionLayer
 		}
 
 		public JsonProperty[] ToJson() {
-			return null;
+			return new JsonProperty[] {
+				new JsonProperty("Tick", _layer.GetCurrentTick()),
+				new JsonProperty("ID", AgentNumber),
+				new JsonProperty("Lat.", SpatialData.Position.X),
+				new JsonProperty("Lon.", SpatialData.Position.Y),
+				new JsonProperty("status", state)
+			};
 		}
         
 		public Vector3 GetPosition() {
